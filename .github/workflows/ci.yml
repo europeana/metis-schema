@@ -1,6 +1,14 @@
 name: CI
 
-on: push
+on:
+  push:
+    #Do not run on main to avoid duplicate builds during release
+    branches:
+      - '!master'
+      - '!main'
+    #Run on release tags
+    tags:
+      - 'v*'
 
 jobs:
   build:
@@ -42,7 +50,7 @@ jobs:
 
   deploy_libraries:
     needs: build
-    if: ${{ github.ref == 'refs/heads/develop' }}
+    if: ${{ github.ref == 'refs/heads/develop' || contains(github.ref, 'refs/tags/')}}
     runs-on: ubuntu-latest
 
     steps:
