@@ -61,4 +61,3 @@ jobs:
           bodyFile: "changelog.txt"
           tag: v${{ github.event.inputs.release-version }}
           draft: true
-          prerelease: true
