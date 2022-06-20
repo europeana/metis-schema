@@ -362,7 +362,7 @@
             <xsl:apply-templates select="." mode="schematron-select-full-path"/>
           </xsl:attribute>
           <svrl:text>
-            Empty rdf:resource attribute is not allowed for <xsl:text/><xsl:value-of select="name(.)"/><xsl:text/>element.
+            Empty rdf:resource attribute is not allowed for <xsl:text/><xsl:value-of select="name(.)"/><xsl:text/> element.
           </svrl:text>
         </svrl:failed-assert>
       </xsl:otherwise>
@@ -602,7 +602,7 @@
             <xsl:apply-templates select="." mode="schematron-select-full-path"/>
           </xsl:attribute>
           <svrl:text>
-            Empty xml:lang attribute is not allowed for <xsl:text/><xsl:value-of select="name(.)"/><xsl:text/>element.
+            Empty xml:lang attribute is not allowed for <xsl:text/><xsl:value-of select="name(.)"/><xsl:text/> element.
           </svrl:text>
         </svrl:failed-assert>
       </xsl:otherwise>
@@ -619,15 +619,14 @@
 
 
   <!--RULE -->
-  <xsl:template match="ore:Proxy" priority="1000" mode="M36">
-    <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl" context="ore:Proxy"/>
+  <xsl:template match="rdf:RDF" priority="1000" mode="M36">
+    <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+      context="ore:Proxy[not(edm:europeanaProxy) or edm:europeanaProxy='false']"/>
 
     <!--ASSERT -->
-    <xsl:choose>
-      <xsl:when test="not(edm:europeanaProxy) or edm:europeanaProxy='false'">
-        <xsl:if test="not(ore:lineage)">
+    <xsl:variable name="proxies" select="ore:Proxy[not(edm:europeanaProxy) or edm:europeanaProxy='false']"/>
         <xsl:choose>
-          <xsl:when test="dc:subject or dc:type or dc:coverage or dct:temporal or dct:spatial">
+          <xsl:when test="$proxies/dc:subject or $proxies/dc:type or $proxies/dc:coverage or $proxies/dct:temporal or $proxies/dct:spatial">
           </xsl:when>
           <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl">
@@ -638,14 +637,14 @@
                 <xsl:value-of select="@rdf:about"/>
               </xsl:attribute>
               <svrl:text>
-                A Provider Proxy must have a dc:subject or dc:type or dct:temporal or dct:spatial.
+                One Provider Proxy must have a dc:subject or dc:type or dct:temporal or dct:spatial or dc:coverage.
               </svrl:text>
             </svrl:failed-assert>
           </xsl:otherwise>
         </xsl:choose>
         <xsl:choose>
           <xsl:when
-            test="dc:subject[@rdf:resource] or dc:subject[normalize-space(text())!=''] or dc:type[@rdf:resource] or dc:type[normalize-space(text())!=''] or dct:temporal[@rdf:resource] or dct:temporal[normalize-space(text())!=''] or dct:spatial[@rdf:resource] or dct:spatial[normalize-space(text())!='']">
+            test="$proxies/dc:subject[@rdf:resource] or $proxies/dc:subject[normalize-space(text())!=''] or $proxies/dc:type[@rdf:resource] or $proxies/dc:type[normalize-space(text())!=''] or $proxies/dct:temporal[@rdf:resource] or $proxies/dct:temporal[normalize-space(text())!=''] or $proxies/dct:spatial[@rdf:resource] or $proxies/dct:spatial[normalize-space(text())!='']">
           </xsl:when>
           <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl">
@@ -653,14 +652,14 @@
                 <xsl:apply-templates select="." mode="schematron-select-full-path"/>
               </xsl:attribute>
               <svrl:text>
-                A Provider Proxy must have at least one of dc:subject or dc:type or dct:temporal or dct:spatial, that has an rdf:resource attribute or have non empty text value.
+                One Provider Proxy must have at least one of dc:subject or dc:type or dct:temporal or dct:spatial, that has an rdf:resource attribute or have non empty text value.
               </svrl:text>
             </svrl:failed-assert>
           </xsl:otherwise>
         </xsl:choose>
         <xsl:choose>
           <xsl:when
-            test="(dc:title and dc:title[normalize-space(text())!='']) or (dc:description[@rdf:resource] or dc:description[normalize-space(text())!=''])"/>
+            test="($proxies/dc:title and $proxies/dc:title[normalize-space(text())!='']) or ($proxies/dc:description[@rdf:resource] or $proxies/dc:description[normalize-space(text())!=''])"/>
           <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl">
               <xsl:attribute name="location">
@@ -670,13 +669,13 @@
                 <xsl:value-of select="@rdf:about"/>
               </xsl:attribute>
               <svrl:text>
-                A Proxy must have a non empty dc:title or a non empty dc:description
+                One Provider Proxy must have a non empty dc:title or a non empty dc:description
               </svrl:text>
             </svrl:failed-assert>
           </xsl:otherwise>
         </xsl:choose>
         <xsl:choose>
-          <xsl:when test="not(edm:type)">
+          <xsl:when test="not($proxies/edm:type)">
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl">
               <xsl:attribute name="location">
                 <xsl:apply-templates select="." mode="schematron-select-full-path"/>
@@ -691,7 +690,7 @@
           </xsl:when>
         </xsl:choose>
         <xsl:choose>
-          <xsl:when test="not(edm:type='TEXT') or (edm:type='TEXT' and dc:language)"/>
+          <xsl:when test="not($proxies/edm:type='TEXT') or ($proxies/edm:type='TEXT' and $proxies/dc:language)"/>
           <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
               test="not(edm:type='TEXT') or (edm:type='TEXT' and exists(dc:language))">
@@ -707,9 +706,13 @@
             </svrl:failed-assert>
           </xsl:otherwise>
         </xsl:choose>
-        </xsl:if>
-      </xsl:when>
-      <xsl:otherwise>
+    <xsl:apply-templates select="*|comment()|processing-instruction()" mode="M36"/>
+  </xsl:template>
+  <xsl:template match="ore:Proxy[edm:europeanaProxy='true']" priority="1000" mode="M36">
+    <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+      context="ore:Proxy[edm:europeanaProxy='true']"/>
+
+    <!--ASSERT -->
         <xsl:choose>
           <xsl:when
             test="not(dc:subject) and not(dc:type) and not(dc:coverage) and not(dct:temporal) and not(dct:spatial)">
@@ -743,11 +746,6 @@
             </svrl:failed-assert>
           </xsl:when>
         </xsl:choose>
-
-
-      </xsl:otherwise>
-    </xsl:choose>
-
     <xsl:apply-templates select="*|comment()|processing-instruction()" mode="M36"/>
   </xsl:template>
   <xsl:template match="text()" priority="-1" mode="M36"/>
