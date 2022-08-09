@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-	xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:edm="http://www.europeana.eu/schemas/edm/" xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:xml="http://www.w3.org/XML/1998/namespace"
+	xmlns:edm="http://www.europeana.eu/schemas/edm/"
+	xmlns:sch="http://purl.oclc.org/dsdl/schematron"
 	targetNamespace="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
 	elementFormDefault="qualified">
 	<annotation>
@@ -132,6 +135,7 @@
 		<simpleContent>
 			<extension base="string">
 				<attribute ref="xml:lang" use="optional" />
+				<attribute ref="rdf:datatype" use="optional" />
 				<attribute ref="edm:wasGeneratedBy" use="optional" />
 				<attribute ref="edm:confidenceLevel" use="optional" />
 			</extension>
