@@ -32,6 +32,7 @@ public class RdfConversionUtils {
   private final IBindingFactory rdfBindingFactory;
   private final Map<String, RdfXmlElementMetadata> rdfXmlElementMetadataMap;
 
+
   /**
    * Default constructor
    */
