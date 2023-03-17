@@ -15,6 +15,6 @@ jobs:
   ci-release:
     uses: europeana/metis-actions/.github/workflows/release.yml@main
     with:
-      release-version: ${{ github.event.inputs.commit-hash-branch }}
-      commit-hash-branch: ${{ github.event.inputs.release-version }}
+      release-version: ${{ github.event.inputs.release-version }}
+      commit-hash-branch: ${{ github.event.inputs.commit-hash-branch }}
     secrets: inherit
