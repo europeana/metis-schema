@@ -12,7 +12,7 @@ on:
 
 jobs:
   call-workflow-passing-data:
-    uses: com/europeana/metis-schema/.github/workflows/ci_called.yml@develop
+    uses: europeana/metis-schema/.github/workflows/ci_called.yml@develop
     with:
       sonar_organization: europeana
       sonar_project_key: europeana_metis-schema
