@@ -6,58 +6,19 @@ on:
       release-version:
         description: 'The version of the intended release, should be just a number'
         required: true
+      new-snapshot-version:
+        description: 'The version of the intended new snapshot'
+        required: true
       commit-hash-branch:
         description: 'The commit hash or branch to use as a base for the merge and release(default: develop)'
         required: false
         default: develop
 
 jobs:
-  release:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
-          # USE PERSONAL ACCESS TOKEN instead of the default to allow triggering CI workflow
-          token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
-          ref: master
-
-      - name: Setup git config
-        run: |
-          git config user.name 'github-actions[bot]'
-          git config user.email 'github-actions[bot]@users.noreply.github.com'
-
-      - name: Checkout reference to have a local copy
-        run: git -c advice.detachedHead=false checkout ${{ github.event.inputs.commit-hash-branch }}
-
-      - name: Checkout Master and merge reference with default commit message
-        run: | 
-          git checkout master
-          git merge ${{ github.event.inputs.commit-hash-branch }} --no-edit
-
-      - name: Update versions on poms and commit(If the version is the same with what is already in the pom the build will fail)
-        run: |
-          mvn versions:set -DnewVersion=${{ github.event.inputs.release-version }} -DgenerateBackupPoms=false --quiet
-          find . -name 'pom.xml' | xargs git add
-          git commit -m "Set release version ${{ github.event.inputs.release-version }}"
-
-      - name: Tag commit with provided version and push
-        run: |
-          git tag v${{ github.event.inputs.release-version }}
-          git push
-          git push origin v${{ github.event.inputs.release-version }}      
-
-      - name: Generate changelog between last two release tags (v*)
-        run: |
-          VERSIONS_RANGE=`git tag --sort=-creatordate  | head -2 | tail -1`..`git tag --sort=-creatordate | head -1`
-          echo "VERSIONS_RANGE: ${VERSIONS_RANGE}"
-          git log --pretty="%s" ${VERSIONS_RANGE} > changelog.txt
-
-      - name: Create Github release Release
-        uses: ncipollo/release-action@v1
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          bodyFile: "changelog.txt"
-          tag: v${{ github.event.inputs.release-version }}
-          draft: true
+  ci-release:
+    uses: europeana/metis-actions/.github/workflows/release.yml@main
+    with:
+      release-version: ${{ github.event.inputs.release-version }}
+      commit-hash-branch: ${{ github.event.inputs.commit-hash-branch }}
+      new-snapshot-version: ${{ github.event.inputs.new-snapshot-version }}
+    secrets: inherit
