@@ -1,0 +1,19 @@
+name: CI CALLER
+
+on:
+  push:
+    #Do not run on main to avoid duplicate builds during release
+    branches-ignore:
+      - '!master'
+      - '!main'
+    #Run on release tags
+    tags:
+      - 'v*'
+
+jobs:
+  call-workflow-passing-data:
+    uses: com/europeana/metis-schema/.github/workflows/ci_called.yml@develop
+    with:
+      sonar_organization: europeana
+      sonar_project_key: europeana_metis-schema
+    secrets: inherit
