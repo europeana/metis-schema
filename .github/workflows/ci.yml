@@ -1,4 +1,4 @@
-name: CI CALLER
+name: CI
 
 on:
   push:
@@ -11,7 +11,7 @@ on:
       - 'v*'
 
 jobs:
-  call-workflow-passing-data:
+  ci-reuse:
     uses: europeana/metis-actions/.github/workflows/ci.yml@main
     with:
       sonar_organization: europeana
