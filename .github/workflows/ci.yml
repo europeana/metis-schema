@@ -11,9 +11,13 @@ on:
       - 'v*'
 
 jobs:
-  ci-reuse:
+  ci:
     uses: europeana/metis-actions/.github/workflows/ci.yml@main
     with:
       sonar_organization: europeana
       sonar_project_key: europeana_metis-schema
+    secrets: inherit
+  deploy-artifacts:
+    needs: ci
+    uses: europeana/metis-actions/.github/workflows/deploy-artifacts.yml@main
     secrets: inherit
