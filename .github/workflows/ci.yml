@@ -22,4 +22,6 @@ jobs:
   deploy-artifacts:
     needs: ci
     uses: europeana/metis-actions/.github/workflows/deploy-artifacts.yml@main
-    secrets: inherit
+    secrets:
+      ARTIFACTORY_USERNAME: ${{ secrets.ARTIFACTORY_USERNAME }}
+      ARTIFACTORY_PASSWORD: ${{ secrets.ARTIFACTORY_PASSWORD }}
