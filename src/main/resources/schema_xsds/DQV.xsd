@@ -3,11 +3,12 @@
   targetNamespace="http://www.w3.org/ns/dqv#"
   xmlns:dqv="http://www.w3.org/ns/dqv#"
   xmlns:oa="http://www.w3.org/ns/oa#"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
   xmlns:dcterms="http://purl.org/dc/terms/" elementFormDefault="qualified">
   <import namespace="http://purl.org/dc/terms/" schemaLocation="DCTERMS.xsd"/>
   <import namespace="http://www.w3.org/ns/oa#" schemaLocation="OA.xsd"/>
 
-  <element name="hasQualityAnnotation">
+  <element name="hasQualityAnnotation" type="rdf:ResourceType">
     <annotation>
       <documentation>The identifier of the Quality annotation. Example:
         &lt;dqv:hasQualityAnnotation/&gt;
