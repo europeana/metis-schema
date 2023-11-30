@@ -8,12 +8,17 @@
   <import namespace="http://purl.org/dc/terms/" schemaLocation="DCTERMS.xsd"/>
   <import namespace="http://www.w3.org/ns/oa#" schemaLocation="OA.xsd"/>
 
-  <element name="hasQualityAnnotation" type="rdf:ResourceType">
+  <element name="hasQualityAnnotation">
     <annotation>
       <documentation>The identifier of the Quality annotation. Example:
         &lt;dqv:hasQualityAnnotation/&gt;
       </documentation>
     </annotation>
+    <complexType>
+      <sequence minOccurs="1" maxOccurs="1">
+        <element ref="dqv:QualityAnnotation" minOccurs="1" maxOccurs="1"/>
+      </sequence>
+    </complexType>
   </element>
   <element name="QualityAnnotation">
     <complexType>
