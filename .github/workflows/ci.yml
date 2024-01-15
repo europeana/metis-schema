@@ -5,7 +5,7 @@ on: push
 jobs:
 
   ci:
-    uses: europeana/metis-actions/.github/workflows/ci.yml@jdk21
+    uses: europeana/metis-actions/.github/workflows/ci.yml@jdk17
     with:
       sonar_organization: europeana
       sonar_project_key: europeana_metis-schema
@@ -14,7 +14,7 @@ jobs:
 
   deploy-artifacts:
     needs: ci
-    uses: europeana/metis-actions/.github/workflows/deploy-artifacts.yml@jdk21
+    uses: europeana/metis-actions/.github/workflows/deploy-artifacts.yml@jdk17
     secrets:
       ARTIFACTORY_USERNAME: ${{ secrets.ARTIFACTORY_USERNAME }}
       ARTIFACTORY_PASSWORD: ${{ secrets.ARTIFACTORY_PASSWORD }}

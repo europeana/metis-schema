@@ -43,7 +43,6 @@
     <version.maven.resources.plugin>3.2.0</version.maven.resources.plugin>
     <version.maven.compiler.plugin>3.8.1</version.maven.compiler.plugin>
     <version.surefire.plugin>2.22.1</version.surefire.plugin>
-    <version.jacoco-maven-plugin>0.8.11</version.jacoco-maven-plugin>
   </properties>
 
   <dependencies>
@@ -105,13 +104,8 @@
         <artifactId>maven-compiler-plugin</artifactId>
         <version>${version.maven.compiler.plugin}</version>
         <configuration>
-          <release>21</release>
+          <release>17</release>
         </configuration>
-      </plugin>
-      <plugin>
-        <groupId>org.jacoco</groupId>
-        <artifactId>jacoco-maven-plugin</artifactId>
-        <version>${version.jacoco-maven-plugin}</version>
       </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
