@@ -4,6 +4,7 @@
 	xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
 	xmlns:dcterms="http://purl.org/dc/terms/" xmlns:enrichment="http://www.europeana.eu/schemas/edm/enrichment/"
 		xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+  xmlns:dqv="http://www.w3.org/ns/dqv#"
 	elementFormDefault="qualified">
 
 	<annotation>
@@ -21,7 +22,8 @@
 		schemaLocation="ENRICHMENT.xsd" />
 	<import namespace="http://www.w3.org/2002/07/owl#"
 		schemaLocation="OWL.xsd" />
-
+  <import namespace="http://www.w3.org/ns/dqv#"
+    schemaLocation="DQV.xsd" />
 	<element name="Aggregation">
 		<complexType>
 			<annotation>
@@ -104,6 +106,7 @@
 						<element ref="edm:rights" maxOccurs="1" minOccurs="1" />
 						<element ref="edm:ugc" maxOccurs="1" minOccurs="0" />
 						<element ref="edm:intermediateProvider" maxOccurs="unbounded" minOccurs="0"/>
+						<element ref="dqv:hasQualityAnnotation" maxOccurs="unbounded" minOccurs="0"/>
 					</sequence>
 				</extension>
 			</complexContent>

@@ -4,7 +4,7 @@
 
   <artifactId>metis-schema</artifactId>
   <groupId>eu.europeana.metis</groupId>
-  <version>8</version>
+  <version>9</version>
 
   <properties>
     <!-- Define static list of namespaces, so we filter out all old-stuff and only include required namespaces -->
@@ -104,7 +104,7 @@
         <artifactId>maven-compiler-plugin</artifactId>
         <version>${version.maven.compiler.plugin}</version>
         <configuration>
-          <release>11</release>
+          <release>17</release>
         </configuration>
       </plugin>
       <plugin>
