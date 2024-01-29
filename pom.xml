@@ -4,7 +4,7 @@
 
   <artifactId>metis-schema</artifactId>
   <groupId>eu.europeana.metis</groupId>
-  <version>9-SNAPSHOT</version>
+  <version>10-SNAPSHOT</version>
 
   <properties>
     <!-- Define static list of namespaces, so we filter out all old-stuff and only include required namespaces -->
