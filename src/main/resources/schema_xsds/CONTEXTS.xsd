@@ -175,6 +175,7 @@
           <element ref="dcterms:isReferencedBy" maxOccurs="unbounded" minOccurs="0"/>
           <element ref="edm:preview" maxOccurs="1" minOccurs="0"/>
           <element ref="svcs:has_service" maxOccurs="unbounded" minOccurs="0"/>
+          <element ref="edm:type" maxOccurs="1" minOccurs="0" />
         </sequence>
       </extension>
     </complexContent>
