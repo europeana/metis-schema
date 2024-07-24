@@ -107,6 +107,8 @@
 						<element ref="edm:ugc" maxOccurs="1" minOccurs="0" />
 						<element ref="edm:intermediateProvider" maxOccurs="unbounded" minOccurs="0"/>
 						<element ref="dqv:hasQualityAnnotation" maxOccurs="unbounded" minOccurs="0"/>
+						<element ref="dcterms:created" minOccurs="0" maxOccurs="1"/>
+						<element ref="dcterms:modified" minOccurs="0" maxOccurs="1"/>
 					</sequence>
 				</extension>
 			</complexContent>
