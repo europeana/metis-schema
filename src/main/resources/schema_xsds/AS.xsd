@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:as="http://www.w3.org/ns/activitystreams#"
+  targetNamespace="http://www.w3.org/ns/activitystreams#">
+
+  <annotation>
+    <documentation>Europeana representation of AS elements
+    </documentation>
+  </annotation>
+
+  <import namespace="http://www.w3.org/1999/02/22-rdf-syntax-ns#" schemaLocation="RDF.xsd"/>
+
+  <element name="object" type="rdf:ResourceType">
+  </element>
+
+  <element name="context" type="rdf:ResourceType">
+  </element>
+
+  <element name="endTime" type="rdf:LiteralType">
+  </element>
+
+
+  <element name="Delete">
+    <complexType>
+      <annotation>
+        <documentation>The EDM representation of record deletion information</documentation>
+      </annotation>
+      <sequence>
+        <element ref="as:object" minOccurs="1" maxOccurs="1"/>
+        <element ref="as:context" minOccurs="1" maxOccurs="unbounded"/>
+        <element ref="as:endTime" minOccurs="1" maxOccurs="1"/>
+      </sequence>
+    </complexType>
+  </element>
+
+</schema>
