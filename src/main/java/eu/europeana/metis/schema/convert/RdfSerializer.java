@@ -1,11 +1,9 @@
 package eu.europeana.metis.schema.convert;
 
+import eu.europeana.metis.schema.convert.model.RdfSerializationException;
 import eu.europeana.metis.schema.convert.model.RdfXmlElementMetadata;
 import eu.europeana.metis.schema.jibx.RDF;
-import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
 import java.io.UnsupportedEncodingException;
 import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
@@ -18,27 +16,21 @@ import java.util.stream.IntStream;
 import org.jibx.runtime.BindingDirectory;
 import org.jibx.runtime.IBindingFactory;
 import org.jibx.runtime.IMarshallingContext;
-import org.jibx.runtime.IUnmarshallingContext;
 import org.jibx.runtime.JiBXException;
 
-/**
- * Utility class for converting {@link RDF} to String and vice versa.
- * @deprecated use {@link RdfSerializer} and/or {@link RdfDeserializer}.
- */
-public class RdfConversionUtils {
+public class RdfSerializer {
 
-  private static final int INDENTATION_SPACE = 2;
-  private static final String UTF8 = StandardCharsets.UTF_8.name();
   @SuppressWarnings("java:S5852") //This regex is safe, and it's only meant for internal use without use input
   private static final Pattern complexTypePattern = Pattern.compile("^\\{(.*)}:(.*)$");
+  private static final String UTF8 = StandardCharsets.UTF_8.name();
+  private static final int INDENTATION_SPACE = 2;
   private final IBindingFactory rdfBindingFactory;
   private final Map<String, RdfXmlElementMetadata> rdfXmlElementMetadataMap;
-
 
   /**
    * Default constructor
    */
-  public RdfConversionUtils() {
+  public RdfSerializer() {
     this(RDF.class);
   }
 
@@ -49,7 +41,7 @@ public class RdfConversionUtils {
    * @param classType the class object type
    * @param <T> the class type
    */
-  <T> RdfConversionUtils(Class<T> classType) {
+  <T> RdfSerializer(Class<T> classType) {
     try {
       rdfBindingFactory = BindingDirectory.getFactory(classType);
       rdfXmlElementMetadataMap = initializeRdfXmlElementMetadataMap();
@@ -63,9 +55,24 @@ public class RdfConversionUtils {
    *
    * @param rdf The RDF object to convert
    * @return An XML string representation of the RDF object
-   * @throws SerializationException if during marshalling there is a failure
+   * @throws RdfSerializationException if during marshalling there is a failure
    */
-  public byte[] convertRdfToBytes(RDF rdf) throws SerializationException {
+  public String serialize(RDF rdf) throws RdfSerializationException {
+    try {
+      return new String(convertRdfToBytes(rdf), UTF8);
+    } catch (UnsupportedEncodingException e) {
+      throw new IllegalStateException("Unexpected exception - should not occur.", e);
+    }
+  }
+
+  /**
+   * Convert an {@link RDF} to a UTF-8 encoded XML
+   *
+   * @param rdf The RDF object to convert
+   * @return An XML string representation of the RDF object
+   * @throws RdfSerializationException if during marshalling there is a failure
+   */
+  public byte[] convertRdfToBytes(RDF rdf) throws RdfSerializationException {
     try {
       IMarshallingContext context = rdfBindingFactory.createMarshallingContext();
       context.setIndent(INDENTATION_SPACE);
@@ -73,7 +80,7 @@ public class RdfConversionUtils {
       context.marshalDocument(rdf, UTF8, null, out);
       return out.toByteArray();
     } catch (JiBXException e) {
-      throw new SerializationException(
+      throw new RdfSerializationException(
           "Something went wrong with converting to or from the RDF format.", e);
     }
   }
@@ -90,54 +97,6 @@ public class RdfConversionUtils {
     Objects.requireNonNull(rdfXmlElementMetadata,
         String.format("Element metadata not found for class: %s", objectClass.getCanonicalName()));
     return String.format("%s:%s", rdfXmlElementMetadata.prefix(), rdfXmlElementMetadata.name());
-  }
-
-  /**
-   * Convert a UTF-8 encoded XML to {@link RDF}
-   *
-   * @param inputStream The xml. The stream is not closed.
-   * @return the RDF object
-   * @throws SerializationException if during unmarshalling there is a failure
-   */
-  public RDF convertInputStreamToRdf(InputStream inputStream) throws SerializationException {
-    try {
-      final IUnmarshallingContext context = rdfBindingFactory.createUnmarshallingContext();
-      return (RDF) context.unmarshalDocument(inputStream, UTF8);
-    } catch (JiBXException e) {
-      throw new SerializationException(
-          "Something went wrong with converting to or from the RDF format.", e);
-    }
-  }
-
-  /**
-   * Convert an {@link RDF} to a UTF-8 encoded XML
-   *
-   * @param rdf The RDF object to convert
-   * @return An XML string representation of the RDF object
-   * @throws SerializationException if during marshalling there is a failure
-   */
-  public String convertRdfToString(RDF rdf) throws SerializationException {
-    try {
-      return new String(convertRdfToBytes(rdf), UTF8);
-    } catch (UnsupportedEncodingException e) {
-      throw new IllegalStateException("Unexpected exception - should not occur.", e);
-    }
-  }
-
-  /**
-   * Convert a UTF-8 encoded XML to {@link RDF}
-   *
-   * @param xml the xml string
-   * @return the RDF object
-   * @throws SerializationException if during unmarshalling there is a failure
-   */
-  public RDF convertStringToRdf(String xml) throws SerializationException {
-    try (final InputStream inputStream = new ByteArrayInputStream(
-        xml.getBytes(StandardCharsets.UTF_8))) {
-      return convertInputStreamToRdf(inputStream);
-    } catch (IOException e) {
-      throw new SerializationException("Unexpected issue with byte stream.", e);
-    }
   }
 
   /**
@@ -183,4 +142,5 @@ public class RdfConversionUtils {
       rdfXmlElementMetadataMap.put(rdfXmlElementMetadata.canonicalClassName(), rdfXmlElementMetadata);
     }
   }
+
 }

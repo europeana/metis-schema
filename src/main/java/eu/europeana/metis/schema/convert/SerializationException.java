@@ -2,6 +2,7 @@ package eu.europeana.metis.schema.convert;
 
 /**
  * Exception that marks a failure in serializing or deserializing.
+ * @deprecated
  */
 public class SerializationException extends Exception {
 
