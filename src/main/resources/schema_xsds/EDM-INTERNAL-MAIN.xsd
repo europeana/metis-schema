@@ -16,7 +16,8 @@
     xmlns:svcs="http://rdfs.org/sioc/services#"
     xmlns:dqv="http://www.w3.org/ns/dqv#"
         xmlns:doap="http://usefulinc.com/ns/doap#"
-    xmlns:sch="http://purl.oclc.org/dsdl/schematron">
+    xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+    xmlns:as="http://www.w3.org/ns/activitystreams#">
 
     <import namespace="http://purl.org/dc/elements/1.1/" schemaLocation="DC.xsd"/>
     <import namespace="http://purl.org/dc/terms/" schemaLocation="DCTERMS.xsd"/>
@@ -33,6 +34,7 @@
     <import namespace="http://rdfs.org/sioc/services#" schemaLocation="SVCS.xsd"/>
     <import namespace="http://www.w3.org/ns/dqv#" schemaLocation="DQV.xsd"/>
     <import namespace="http://usefulinc.com/ns/doap#" schemaLocation="DOAP.xsd"/>
+    <import namespace="http://www.w3.org/ns/activitystreams#" schemaLocation="AS.xsd"/>
     <include schemaLocation="EDM-COMMON-MAIN.xsd"/>
     <include schemaLocation="CONTEXTS.xsd"/>
     
@@ -66,6 +68,7 @@
             <element ref="foaf:Organization" minOccurs="0" maxOccurs="unbounded"/>
             <element ref="dcat:Dataset" minOccurs="0" maxOccurs="unbounded"/>
             <element ref="svcs:Service" minOccurs="0" maxOccurs="unbounded"/>
+            <element ref="as:Delete" minOccurs="0" maxOccurs="unbounded"/>
         </sequence>
     </complexType>
 

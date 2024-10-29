@@ -75,6 +75,8 @@ public enum MediaType {
       result = VIDEO;
     } else if (mimeType.startsWith("text/") || isApplicationMediaRepresentingText(mimeType)) {
       result = TEXT;
+    } else if (mimeType.startsWith("model/")){
+      result = THREE_D;
     } else {
       result = OTHER;
     }
