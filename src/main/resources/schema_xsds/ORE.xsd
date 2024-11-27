@@ -24,6 +24,8 @@
 		schemaLocation="OWL.xsd" />
   <import namespace="http://www.w3.org/ns/dqv#"
     schemaLocation="DQV.xsd" />
+  <import namespace="http://purl.org/dc/terms/"
+    schemaLocation="DCTERMS.xsd" />
 	<element name="Aggregation">
 		<complexType>
 			<annotation>
@@ -182,15 +184,15 @@
 					<element ref="ore:lineage" maxOccurs="unbounded" minOccurs="0" />
 					<element ref="edm:type" maxOccurs="1" minOccurs="0" />
 					<element ref="owl:sameAs" maxOccurs="unbounded" minOccurs="0" />
-					<!-- The fields below are meant to be used for enrichment purposes but 
-						they are not currently being used. Probably they will be removed in a future 
-						release. <element ref="enrichment:agent_label" maxOccurs="unbounded" minOccurs="0"/> 
-						<element ref="enrichment:agent_term" maxOccurs="unbounded" minOccurs="0"/> 
-						<element ref="enrichment:concept_label" maxOccurs="unbounded" minOccurs="0"/> 
-						<element ref="enrichment:concept_term" maxOccurs="unbounded" minOccurs="0"/> 
-						<element ref="enrichment:period_label" maxOccurs="unbounded" minOccurs="0"/> 
-						<element ref="enrichment:period_term" maxOccurs="unbounded" minOccurs="0"/> 
-						<element ref="enrichment:place_label" maxOccurs="unbounded" minOccurs="0"/> 
+					<!-- The fields below are meant to be used for enrichment purposes but
+						they are not currently being used. Probably they will be removed in a future
+						release. <element ref="enrichment:agent_label" maxOccurs="unbounded" minOccurs="0"/>
+						<element ref="enrichment:agent_term" maxOccurs="unbounded" minOccurs="0"/>
+						<element ref="enrichment:concept_label" maxOccurs="unbounded" minOccurs="0"/>
+						<element ref="enrichment:concept_term" maxOccurs="unbounded" minOccurs="0"/>
+						<element ref="enrichment:period_label" maxOccurs="unbounded" minOccurs="0"/>
+						<element ref="enrichment:period_term" maxOccurs="unbounded" minOccurs="0"/>
+						<element ref="enrichment:place_label" maxOccurs="unbounded" minOccurs="0"/>
 						<element ref="enrichment:place_term" maxOccurs="unbounded" minOccurs="0"/> -->
 				</sequence>
 			</extension>
