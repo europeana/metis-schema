@@ -647,6 +647,18 @@
         </annotation>
     </element>
 
+    <element name="pid" type="rdf:ResourceOrLiteralType">
+        <annotation>
+            <documentation>A Persistent Identifier (PID) is a globally unique and long-lasting
+                reference to potentially any sort of digital or non-digital entity, providing
+                the information required to reliably identify, verify, locate and access it.
+                They ensure that the digital entity is ‘set in stone’ and can always be findable
+                through that identifier. It is expected that data partners will mainly use the
+                edm:pid property with literal values.
+            </documentation>
+        </annotation>
+    </element>
+
     <element name="preview" type="rdf:ResourceType">
         <annotation>
             <documentation>
