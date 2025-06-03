@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://purl.org/dc/terms/"
-  xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" elementFormDefault="qualified">
+  xmlns:dcterms="http://purl.org/dc/terms/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:edm="http://www.europeana.eu/schemas/edm/"
+  elementFormDefault="qualified">
   <annotation>
     <documentation>
       EDM First Implementation Schema: DC Terms
@@ -8,8 +11,7 @@
   </annotation>
   <import namespace="http://www.w3.org/1999/02/22-rdf-syntax-ns#" schemaLocation="RDF.xsd" />
     
-  <element name="isPartOf" type="rdf:ResourceOrLiteralType">
-  </element>
+  <element name="isPartOf" type="rdf:ResourceOrLiteralType" />
   
   <element name="isReferencedBy" type="rdf:ResourceOrLiteralType">
     <annotation>
@@ -233,7 +235,8 @@
     </annotation>
   </element>
   
-  <element name="hasPart" type="rdf:ResourceOrLiteralType">
-  </element>
+  <element name="hasPart" type="rdf:ResourceOrLiteralType" />
+  <element name="title" type="rdf:LiteralType" />
+  <element name="creator" type="rdf:LiteralOrAgentType" />
   
 </schema>

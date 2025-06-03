@@ -125,45 +125,8 @@
             </annotation>
             <extension base="rdf:AboutType">
                 <sequence>
+                    <element ref="edm:pid" maxOccurs="unbounded" minOccurs="0" />
                     <element ref="owl:sameAs" maxOccurs="unbounded" minOccurs="0"/>
-                </sequence>
-            </extension>
-        </complexContent>
-    </complexType>
-
-    <complexType name="PersistentIdentifierType">
-        <complexContent>
-            <annotation>
-                <documentation>
-                    Allows metadata about the PID to be recorded
-                </documentation>
-            </annotation>
-            <extension base="edm:pid">
-                <sequence>
-                    <element ref="rdf:value" type="rdf:LiteralType" maxOccurs="1"/>
-                    <element ref="skos:notation" type="rdf:LiteralType" minOccurs="0" maxOccurs="unbounded"/>
-                    <element ref="edm:hasUrl" type="rdf:ResourceType" minOccurs="0" maxOccurs="unbounded" />
-                    <element ref="dcterms:created" type="rdf:LiteralType" minOccurs="0" maxOccurs="1"/>
-                    <element ref="dcterms:creator"  minOccurs="0" maxOccurs="1"/>
-                    <element ref="odrl:hasPolicy" type="rdf:ResourceType" minOccurs="0" maxOccurs="1"/>
-                    <element ref="skos:inScheme" minOccurs="0" maxOccurs="1"/>
-                    <element ref="edm:equivalentPID" type="edm:PersistentIdentifierType" minOccurs="0" maxOccurs="unbounded"/>
-                    <element ref="edm:replacesPID" type="rdf:LiteralType" minOccurs="0" maxOccurs="unbounded"/>
-                </sequence>
-            </extension>
-        </complexContent>
-    </complexType>
-
-    <complexType name="PersistentIdentifierSchemeType">
-        <complexContent>
-            <annotation>
-                <documentation>
-                    A comprehensive set of standards defining various aspects of PIDs, such as their format and syntax.
-                </documentation>
-            </annotation>
-            <extension base="rdf:AboutType">
-                <sequence>
-                    <element ref="dcterms:title" minOccurs="0" maxOccurs="unbounded"/>
                 </sequence>
             </extension>
         </complexContent>
