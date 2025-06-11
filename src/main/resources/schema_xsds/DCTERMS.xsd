@@ -237,6 +237,6 @@
   
   <element name="hasPart" type="rdf:ResourceOrLiteralType" />
   <element name="title" type="rdf:LiteralType" />
-  <element name="creator" type="rdf:LiteralOrAgentType" />
+  <element name="creator" type="rdf:ResourceOrLiteralType" />
   
 </schema>

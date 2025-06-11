@@ -6,7 +6,9 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 import eu.europeana.metis.schema.jibx.AgentType;
 import eu.europeana.metis.schema.jibx.Alternative;
 import eu.europeana.metis.schema.jibx.Concept;
+import eu.europeana.metis.schema.jibx.ConceptType;
 import eu.europeana.metis.schema.jibx.Coverage;
+import eu.europeana.metis.schema.jibx.Creator1;
 import eu.europeana.metis.schema.jibx.CurrentLocation;
 import eu.europeana.metis.schema.jibx.Description;
 import eu.europeana.metis.schema.jibx.EquivalentPID;
@@ -85,7 +87,7 @@ class RdfConversionUtilsTest {
     assertEquals("dcterms:tableOfContents", rdfConversionUtils.getQualifiedElementNameForClass(TableOfContents.class));
     assertEquals("dcterms:temporal", rdfConversionUtils.getQualifiedElementNameForClass(Temporal.class));
     assertEquals("dcterms:title", rdfConversionUtils.getQualifiedElementNameForClass(Title1.class));
-    assertEquals("dcterms:creator", rdfConversionUtils.getQualifiedElementNameForClass(LiteralOrAgentType.class));
+    assertEquals("dcterms:creator", rdfConversionUtils.getQualifiedElementNameForClass(Creator1.class));
   }
 
   @Test
@@ -95,7 +97,6 @@ class RdfConversionUtilsTest {
     assertEquals("edm:currentLocation", rdfConversionUtils.getQualifiedElementNameForClass(CurrentLocation.class));
     assertEquals("edm:hasType", rdfConversionUtils.getQualifiedElementNameForClass(HasType.class));
     assertEquals("edm:isRelatedTo", rdfConversionUtils.getQualifiedElementNameForClass(IsRelatedTo.class));
-    assertEquals("edm:pid", rdfConversionUtils.getQualifiedElementNameForClass(Pid.class));
     assertEquals("edm:hasURL", rdfConversionUtils.getQualifiedElementNameForClass(HasURL.class));
     assertEquals("edm:equivalentPID", rdfConversionUtils.getQualifiedElementNameForClass(EquivalentPID.class));
     assertEquals("edm:replacesPID", rdfConversionUtils.getQualifiedElementNameForClass(ReplacesPID.class));

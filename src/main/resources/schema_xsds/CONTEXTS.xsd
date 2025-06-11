@@ -44,7 +44,6 @@
     <complexContent>
       <extension base="rdf:AboutType">
         <sequence>
-          <element ref="edm:pid" maxOccurs="unbounded" minOccurs="0" />
           <element ref="skos:prefLabel" maxOccurs="unbounded" minOccurs="0" />
           <element ref="skos:altLabel" maxOccurs="unbounded" minOccurs="0" />
           <element ref="skos:note" maxOccurs="unbounded" minOccurs="0" />
@@ -83,7 +82,6 @@
     <complexContent>
       <extension base="rdf:AboutType">
         <sequence>
-          <element ref="edm:pid" maxOccurs="unbounded" minOccurs="0" />
           <element ref="wgs84_pos:lat" maxOccurs="1" minOccurs="0" />
           <element ref="wgs84_pos:long" maxOccurs="1" minOccurs="0" />
           <element ref="wgs84_pos:alt" maxOccurs="1" minOccurs="0"/>
@@ -109,7 +107,6 @@
     <complexContent>
       <extension base="rdf:AboutType">
         <sequence>
-          <element ref="edm:pid" maxOccurs="unbounded" minOccurs="0" />
           <element ref="skos:prefLabel" maxOccurs="unbounded" minOccurs="0" />
           <element ref="skos:altLabel" maxOccurs="unbounded" minOccurs="0" />
           <element ref="skos:note" maxOccurs="unbounded" minOccurs="0" />
@@ -142,7 +139,7 @@
     <complexContent>
       <extension base="rdf:AboutType">
         <sequence>
-          <element ref="edm:pid" maxOccurs="unbounded" minOccurs="0" />
+          <element name="pid" type="rdf:LiteralType" maxOccurs="unbounded" minOccurs="0" />
           <element ref="dc:creator" maxOccurs="unbounded" minOccurs="0"/>
           <element ref="dc:description" maxOccurs="unbounded" minOccurs="0"/>
           <element ref="dc:format" maxOccurs="unbounded" minOccurs="0"/>

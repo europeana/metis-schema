@@ -69,6 +69,8 @@
             <element ref="dcat:Dataset" minOccurs="0" maxOccurs="unbounded"/>
             <element ref="svcs:Service" minOccurs="0" maxOccurs="unbounded"/>
             <element ref="as:Delete" minOccurs="0" maxOccurs="unbounded"/>
+            <element name="PersistentIdentifier " type="edm:PersistentIdentifierType" minOccurs="0" maxOccurs="unbounded"/>
+            <element name="PersistentIdentifierScheme" type="edm:PersistentIdentifierSchemeType" minOccurs="0" maxOccurs="unbounded"/>
         </sequence>
     </complexType>
 
@@ -125,7 +127,6 @@
             </annotation>
             <extension base="rdf:AboutType">
                 <sequence>
-                    <element ref="edm:pid" maxOccurs="unbounded" minOccurs="0" />
                     <element ref="owl:sameAs" maxOccurs="unbounded" minOccurs="0"/>
                 </sequence>
             </extension>
