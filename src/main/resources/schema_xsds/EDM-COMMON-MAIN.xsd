@@ -673,22 +673,26 @@
         </annotation>
     </element>
     <complexType name="PersistentIdentifierType">
-      <annotation>
-          <documentation>
-              Allows metadata about the PID to be recorded
-          </documentation>
-      </annotation>
-        <sequence>
-            <element ref="rdf:value" minOccurs="1" maxOccurs="1"/>
-            <element ref="skos:notation" minOccurs="0" maxOccurs="unbounded"/>
-            <element ref="edm:hasURL" minOccurs="0" maxOccurs="unbounded" />
-            <element ref="dcterms:created" minOccurs="0" maxOccurs="1"/>
-            <element ref="dcterms:creator"  minOccurs="0" maxOccurs="1"/>
-            <element ref="odrl:hasPolicy" minOccurs="0" maxOccurs="1"/>
-            <element ref="skos:inScheme" minOccurs="0" maxOccurs="1"/>
-            <element ref="edm:equivalentPID" minOccurs="0" maxOccurs="unbounded"/>
-            <element ref="edm:replacesPID" minOccurs="0" maxOccurs="unbounded"/>
-        </sequence>
+        <complexContent>
+            <annotation>
+              <documentation>
+                  Allows metadata about the PID to be recorded
+              </documentation>
+            </annotation>
+            <extension base="rdf:AboutType">
+                <sequence>
+                    <element ref="rdf:value" minOccurs="1" maxOccurs="1"/>
+                    <element ref="skos:notation" minOccurs="0" maxOccurs="unbounded"/>
+                    <element ref="edm:hasURL" minOccurs="0" maxOccurs="unbounded" />
+                    <element ref="dcterms:created" minOccurs="0" maxOccurs="1"/>
+                    <element ref="dcterms:creator"  minOccurs="0" maxOccurs="1"/>
+                    <element ref="odrl:hasPolicy" minOccurs="0" maxOccurs="1"/>
+                    <element ref="skos:inScheme" minOccurs="0" maxOccurs="1"/>
+                    <element ref="edm:equivalentPID" minOccurs="0" maxOccurs="unbounded"/>
+                    <element ref="edm:replacesPID" minOccurs="0" maxOccurs="unbounded"/>
+                </sequence>
+            </extension>
+        </complexContent>
     </complexType>
 
     <complexType name="PersistentIdentifierSchemeType">
