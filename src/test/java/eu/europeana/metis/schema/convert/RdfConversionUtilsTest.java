@@ -19,6 +19,7 @@ import eu.europeana.metis.schema.jibx.IsPartOf;
 import eu.europeana.metis.schema.jibx.IsReferencedBy;
 import eu.europeana.metis.schema.jibx.IsRelatedTo;
 import eu.europeana.metis.schema.jibx.Medium;
+import eu.europeana.metis.schema.jibx.Pid;
 import eu.europeana.metis.schema.jibx.PlaceType;
 import eu.europeana.metis.schema.jibx.Provenance;
 import eu.europeana.metis.schema.jibx.References;
@@ -94,6 +95,7 @@ class RdfConversionUtilsTest {
     assertEquals("edm:currentLocation", rdfConversionUtils.getQualifiedElementNameForClass(CurrentLocation.class));
     assertEquals("edm:hasType", rdfConversionUtils.getQualifiedElementNameForClass(HasType.class));
     assertEquals("edm:isRelatedTo", rdfConversionUtils.getQualifiedElementNameForClass(IsRelatedTo.class));
+    assertEquals("edm:pid", rdfConversionUtils.getQualifiedElementNameForClass(Pid.class));
     assertEquals("edm:hasURL", rdfConversionUtils.getQualifiedElementNameForClass(HasURL.class));
     assertEquals("edm:equivalentPID", rdfConversionUtils.getQualifiedElementNameForClass(EquivalentPID.class));
     assertEquals("edm:replacesPID", rdfConversionUtils.getQualifiedElementNameForClass(ReplacesPID.class));

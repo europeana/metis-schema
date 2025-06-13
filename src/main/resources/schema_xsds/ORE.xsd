@@ -176,7 +176,7 @@
 			</annotation>
 			<extension base="edm:BaseProvidedCHOType">
 				<sequence>
-					<element name="pid" type="rdf:ResourceOrLiteralType" maxOccurs="unbounded" minOccurs="0" />
+					<element ref="edm:pid" maxOccurs="unbounded" minOccurs="0"/>
 					<element ref="edm:europeanaProxy" maxOccurs="1" minOccurs="0" />
 					<element ref="edm:userTag" maxOccurs="unbounded" minOccurs="0" />
 					<element ref="edm:year" maxOccurs="unbounded" minOccurs="0" />

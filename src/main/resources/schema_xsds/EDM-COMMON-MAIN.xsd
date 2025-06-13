@@ -705,6 +705,7 @@
             </extension>
         </complexContent>
     </complexType>
+    <element name="pid" type="rdf:ResourceOrLiteralType"/>
 
     <element name="preview" type="rdf:ResourceType">
         <annotation>
