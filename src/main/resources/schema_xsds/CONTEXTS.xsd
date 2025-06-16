@@ -11,8 +11,7 @@
   xmlns:rdaGr2="http://rdvocab.info/ElementsGr2/" 
   xmlns:foaf="http://xmlns.com/foaf/0.1/"
   xmlns:ebucore="http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#"
-
-        xmlns:svcs="http://rdfs.org/sioc/services#"
+  xmlns:svcs="http://rdfs.org/sioc/services#"
   xmlns:sch="http://purl.oclc.org/dsdl/schematron"
   elementFormDefault="qualified">
 
@@ -140,6 +139,7 @@
     <complexContent>
       <extension base="rdf:AboutType">
         <sequence>
+          <element name="pid" type="rdf:LiteralType" maxOccurs="unbounded" minOccurs="0" />
           <element ref="dc:creator" maxOccurs="unbounded" minOccurs="0"/>
           <element ref="dc:description" maxOccurs="unbounded" minOccurs="0"/>
           <element ref="dc:format" maxOccurs="unbounded" minOccurs="0"/>
@@ -180,6 +180,5 @@
       </extension>
     </complexContent>
   </complexType>
-
 
 </schema>

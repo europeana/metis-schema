@@ -7,19 +7,24 @@ import eu.europeana.metis.schema.jibx.AgentType;
 import eu.europeana.metis.schema.jibx.Alternative;
 import eu.europeana.metis.schema.jibx.Concept;
 import eu.europeana.metis.schema.jibx.Coverage;
+import eu.europeana.metis.schema.jibx.Creator1;
 import eu.europeana.metis.schema.jibx.CurrentLocation;
 import eu.europeana.metis.schema.jibx.Description;
+import eu.europeana.metis.schema.jibx.EquivalentPID;
 import eu.europeana.metis.schema.jibx.Format;
 import eu.europeana.metis.schema.jibx.HasPart;
 import eu.europeana.metis.schema.jibx.HasType;
+import eu.europeana.metis.schema.jibx.HasURL;
 import eu.europeana.metis.schema.jibx.IsPartOf;
 import eu.europeana.metis.schema.jibx.IsReferencedBy;
 import eu.europeana.metis.schema.jibx.IsRelatedTo;
 import eu.europeana.metis.schema.jibx.Medium;
+import eu.europeana.metis.schema.jibx.Pid;
 import eu.europeana.metis.schema.jibx.PlaceType;
 import eu.europeana.metis.schema.jibx.Provenance;
 import eu.europeana.metis.schema.jibx.References;
 import eu.europeana.metis.schema.jibx.Relation;
+import eu.europeana.metis.schema.jibx.ReplacesPID;
 import eu.europeana.metis.schema.jibx.Rights;
 import eu.europeana.metis.schema.jibx.Source;
 import eu.europeana.metis.schema.jibx.Spatial;
@@ -28,6 +33,7 @@ import eu.europeana.metis.schema.jibx.TableOfContents;
 import eu.europeana.metis.schema.jibx.Temporal;
 import eu.europeana.metis.schema.jibx.TimeSpanType;
 import eu.europeana.metis.schema.jibx.Title;
+import eu.europeana.metis.schema.jibx.Title1;
 import eu.europeana.metis.schema.jibx.Type;
 import org.junit.jupiter.api.Test;
 
@@ -78,6 +84,8 @@ class RdfConversionUtilsTest {
     assertEquals("dcterms:spatial", rdfConversionUtils.getQualifiedElementNameForClass(Spatial.class));
     assertEquals("dcterms:tableOfContents", rdfConversionUtils.getQualifiedElementNameForClass(TableOfContents.class));
     assertEquals("dcterms:temporal", rdfConversionUtils.getQualifiedElementNameForClass(Temporal.class));
+    assertEquals("dcterms:title", rdfConversionUtils.getQualifiedElementNameForClass(Title1.class));
+    assertEquals("dcterms:creator", rdfConversionUtils.getQualifiedElementNameForClass(Creator1.class));
   }
 
   @Test
@@ -87,5 +95,9 @@ class RdfConversionUtilsTest {
     assertEquals("edm:currentLocation", rdfConversionUtils.getQualifiedElementNameForClass(CurrentLocation.class));
     assertEquals("edm:hasType", rdfConversionUtils.getQualifiedElementNameForClass(HasType.class));
     assertEquals("edm:isRelatedTo", rdfConversionUtils.getQualifiedElementNameForClass(IsRelatedTo.class));
+    assertEquals("edm:pid", rdfConversionUtils.getQualifiedElementNameForClass(Pid.class));
+    assertEquals("edm:hasURL", rdfConversionUtils.getQualifiedElementNameForClass(HasURL.class));
+    assertEquals("edm:equivalentPID", rdfConversionUtils.getQualifiedElementNameForClass(EquivalentPID.class));
+    assertEquals("edm:replacesPID", rdfConversionUtils.getQualifiedElementNameForClass(ReplacesPID.class));
   }
 }
