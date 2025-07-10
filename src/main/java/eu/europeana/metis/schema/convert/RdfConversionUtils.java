@@ -69,11 +69,20 @@ public class RdfConversionUtils {
       context.setIndent(INDENTATION_SPACE);
       ByteArrayOutputStream out = new ByteArrayOutputStream();
       context.marshalDocument(rdf, UTF8, null, out);
-      return out.toByteArray();
+      byte[] rdfBytes = out.toByteArray();
+      if (isEmptyOrSpaces(rdfBytes)) {
+        throw new SerializationException("RDF is empty");
+      }
+      return rdfBytes;
     } catch (JiBXException e) {
       throw new SerializationException(
           "Something went wrong with converting to or from the RDF format.", e);
     }
+  }
+
+  private boolean isEmptyOrSpaces(byte[] byteArray) {
+    return (byteArray == null)
+        || new String(byteArray, StandardCharsets.UTF_8).trim().isEmpty();
   }
 
   /**
