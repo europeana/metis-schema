@@ -81,8 +81,15 @@ public class RdfConversionUtils {
   }
 
   private boolean isEmptyOrSpaces(byte[] byteArray) {
-    return (byteArray == null)
-        || new String(byteArray, StandardCharsets.UTF_8).trim().isEmpty();
+    if (byteArray == null || byteArray.length == 0) {
+      return true;
+    }
+    for (byte b : byteArray) {
+      if (!Character.isWhitespace(b)) {
+        return false;
+      }
+    }
+    return true;
   }
 
   /**

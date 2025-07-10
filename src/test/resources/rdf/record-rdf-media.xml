@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:dcterms="http://purl.org/dc/terms/" xmlns:edm="http://www.europeana.eu/schemas/edm/"
+  xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+  xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:ebucore="http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#"
+  xmlns:ore="http://www.openarchives.org/ore/terms/"
+>
+  <edm:ProvidedCHO rdf:about="/1339/item_25C5CTL6AUFVVGP5CQ5CPUBZ2SS56DAN"/>
+  <edm:WebResource
+    rdf:about="https://heidicon.ub.uni-heidelberg.de/api/v1/objects/uuid/b37cfa22-66e2-431f-b63b-165e6e6b271d/file/id/27505/file_version/name/huge/disposition/inline">
+    <dc:format>image/jpeg</dc:format>
+    <edm:rights rdf:resource="http://creativecommons.org/publicdomain/mark/1.0/"/>
+    <ebucore:hasMimeType>image/jpeg</ebucore:hasMimeType>
+    <ebucore:fileByteSize rdf:datatype="http://www.w3.org/2001/XMLSchema#long">380780</ebucore:fileByteSize>
+    <ebucore:width rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1050</ebucore:width>
+    <ebucore:height rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1575</ebucore:height>
+    <edm:hasColorSpace>sRGB</edm:hasColorSpace>
+    <edm:componentColor rdf:datatype="http://www.w3.org/2001/XMLSchema#hexBinary">#FFF5EE</edm:componentColor>
+    <edm:componentColor rdf:datatype="http://www.w3.org/2001/XMLSchema#hexBinary">#FAFAD2</edm:componentColor>
+    <edm:componentColor rdf:datatype="http://www.w3.org/2001/XMLSchema#hexBinary">#F5DEB3</edm:componentColor>
+    <edm:componentColor rdf:datatype="http://www.w3.org/2001/XMLSchema#hexBinary">#CD5C5C</edm:componentColor>
+    <edm:componentColor rdf:datatype="http://www.w3.org/2001/XMLSchema#hexBinary">#800000</edm:componentColor>
+    <edm:componentColor rdf:datatype="http://www.w3.org/2001/XMLSchema#hexBinary">#F5F5DC</edm:componentColor>
+    <ebucore:orientation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">portrait</ebucore:orientation>
+    <edm:type>IMAGE</edm:type>
+  </edm:WebResource>
+  <edm:WebResource rdf:about="https://heidicon.ub.uni-heidelberg.de/detail/573222">
+    <ebucore:hasMimeType>text/html</ebucore:hasMimeType>
+    <ebucore:fileByteSize rdf:datatype="http://www.w3.org/2001/XMLSchema#long">0</ebucore:fileByteSize>
+    <edm:type>TEXT</edm:type>
+  </edm:WebResource>
+  <skos:Concept rdf:about="https://d-nb.info/gnd/4127914-1">
+    <skos:prefLabel>Chronik</skos:prefLabel>
+  </skos:Concept>
+  <skos:Concept rdf:about="https://d-nb.info/gnd/4225780-3">
+    <skos:prefLabel>Ranke</skos:prefLabel>
+  </skos:Concept>
+  <skos:Concept rdf:about="https://d-nb.info/gnd/4008650-1">
+    <skos:prefLabel>Buchmalerei</skos:prefLabel>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://data.europeana.eu/concept/2829">
+    <skos:exactMatch rdf:resource="http://www.wikidata.org/entity/Q185363"/>
+    <skos:exactMatch rdf:resource="https://d-nb.info/gnd/4127914-1"/>
+    <skos:exactMatch rdf:resource="http://purl.org/bncf/tid/6654"/>
+    <skos:exactMatch rdf:resource="https://www.freebase.com/m/023py"/>
+    <skos:exactMatch rdf:resource="https://g.co/kg/m/023py"/>
+    <skos:exactMatch rdf:resource="http://vocab.getty.edu/aat/300026361"/>
+    <skos:exactMatch rdf:resource="http://www.yso.fi/onto/yso/p11598"/>
+    <skos:exactMatch rdf:resource="http://id.loc.gov/authorities/genreForms/gf2014026045"/>
+    <skos:exactMatch rdf:resource="http://dbpedia.org/resource/Chronicle"/>
+    <skos:note xml:lang="de">Geschichtliche Prosadarstellung, die die Ereignisse in zeitlicher Reihenfolge geordnet darstellt
+    </skos:note>
+    <skos:note xml:lang="ru">Историческое описание фактов и событий в хронологическом порядке</skos:note>
+    <skos:note xml:lang="sv">Litterär historisk framställning av yttre händelser i bestämd tidsföljd</skos:note>
+    <skos:note xml:lang="fi">Historian tapahtumia listaava aikakirja</skos:note>
+    <skos:note xml:lang="en">Historical account of facts and events arranged in chronological order</skos:note>
+    <skos:note xml:lang="it">Genere letterario e storiografico</skos:note>
+    <skos:note xml:lang="fr">Récit de faits historiques dans l'ordre chronologique</skos:note>
+    <skos:note xml:lang="hu">Irodalmi műfaj</skos:note>
+    <skos:note xml:lang="es">Género literario consistente en la recopilación de hechos históricos</skos:note>
+    <skos:note xml:lang="cs">Chronologicky uspořádaný popis historických událostí</skos:note>
+    <skos:note xml:lang="da">Litteraturhistorisk produktion af eksterne begivenheder i forudbestemt tidssekvens</skos:note>
+    <skos:note xml:lang="nl">Historisch verslag van feiten en gebeurtenissen in chronologische volgorde</skos:note>
+    <skos:note xml:lang="ca">Gènere literari basat en la recopilació de fets històrics</skos:note>
+    <skos:prefLabel xml:lang="de">Chronik</skos:prefLabel>
+    <skos:prefLabel xml:lang="ru">Хроника</skos:prefLabel>
+    <skos:prefLabel xml:lang="fi">Kronikka</skos:prefLabel>
+    <skos:prefLabel xml:lang="pt">Crónica histórica</skos:prefLabel>
+    <skos:prefLabel xml:lang="bg">Летопис</skos:prefLabel>
+    <skos:prefLabel xml:lang="lt">Kronika</skos:prefLabel>
+    <skos:prefLabel xml:lang="hr">Kronika</skos:prefLabel>
+    <skos:prefLabel xml:lang="lv">Hronika</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Chronique</skos:prefLabel>
+    <skos:prefLabel xml:lang="hu">Krónika</skos:prefLabel>
+    <skos:prefLabel xml:lang="sk">Kronika</skos:prefLabel>
+    <skos:prefLabel xml:lang="sl">Kronika</skos:prefLabel>
+    <skos:prefLabel xml:lang="ga">Croinic</skos:prefLabel>
+    <skos:prefLabel xml:lang="ca">Crònica</skos:prefLabel>
+    <skos:prefLabel xml:lang="sv">Krönika</skos:prefLabel>
+    <skos:prefLabel xml:lang="el">Χρονικό</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">Chronicle</skos:prefLabel>
+    <skos:prefLabel xml:lang="it">Cronaca</skos:prefLabel>
+    <skos:prefLabel xml:lang="es">Crónica</skos:prefLabel>
+    <skos:prefLabel xml:lang="et">Kroonika</skos:prefLabel>
+    <skos:prefLabel xml:lang="eu">Kronika</skos:prefLabel>
+    <skos:prefLabel xml:lang="cs">Kronika</skos:prefLabel>
+    <skos:prefLabel xml:lang="pl">Kronika</skos:prefLabel>
+    <skos:prefLabel xml:lang="ro">Letopiseț</skos:prefLabel>
+    <skos:prefLabel xml:lang="da">Krønike</skos:prefLabel>
+    <skos:prefLabel xml:lang="nl">Kroniek</skos:prefLabel>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://data.europeana.eu/concept/2915">
+    <skos:broader rdf:resource="http://data.europeana.eu/concept/35"/>
+    <skos:broader rdf:resource="http://data.europeana.eu/concept/40"/>
+    <skos:exactMatch rdf:resource="http://www.wikidata.org/entity/Q8362"/>
+    <skos:exactMatch rdf:resource="https://d-nb.info/gnd/4008650-1"/>
+    <skos:exactMatch rdf:resource="http://purl.org/bncf/tid/27349"/>
+    <skos:exactMatch rdf:resource="https://www.freebase.com/m/03qtnt"/>
+    <skos:exactMatch rdf:resource="https://g.co/kg/m/03qtnt"/>
+    <skos:exactMatch rdf:resource="http://vocab.getty.edu/aat/300264522"/>
+    <skos:exactMatch rdf:resource="http://dbpedia.org/resource/Miniature_(illuminated_manuscript)"/>
+    <skos:note xml:lang="cs">Ruční malířská výzdoba rukopisů nebo prvotisků prováděná iluminátorem</skos:note>
+    <skos:note xml:lang="de">Kunstgattung der malerischen Gestaltung von Büchern</skos:note>
+    <skos:note xml:lang="ru">Жанр</skos:note>
+    <skos:note xml:lang="bg">Жанр в изобразителното изкуство</skos:note>
+    <skos:note xml:lang="en">Picture in an ancient or medieval illuminated manuscript</skos:note>
+    <skos:note xml:lang="it">Immagine realizzata per decorare un manoscritto</skos:note>
+    <skos:note xml:lang="fr">Peinture figurée servant à enluminer un livre</skos:note>
+    <skos:note xml:lang="pl">Obraz w starożytnym lub średniowiecznym manuskrypcie</skos:note>
+    <skos:note xml:lang="es">Pintura en un manuscrito antiguo o medieval</skos:note>
+    <skos:note xml:lang="nl">Afbeelding in een (middeleeuws) manuscript</skos:note>
+    <skos:note xml:lang="ca">Imatge en un manuscrit antic o medieval</skos:note>
+    <skos:prefLabel xml:lang="de">Buchmalerei</skos:prefLabel>
+    <skos:prefLabel xml:lang="ru">Миниатюра</skos:prefLabel>
+    <skos:prefLabel xml:lang="sv">Bokmåleri</skos:prefLabel>
+    <skos:prefLabel xml:lang="pt">Miniatura</skos:prefLabel>
+    <skos:prefLabel xml:lang="bg">Миниатюра</skos:prefLabel>
+    <skos:prefLabel xml:lang="el">Μικρογραφία</skos:prefLabel>
+    <skos:prefLabel xml:lang="lt">Miniatiūra</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">Manuscript illumination</skos:prefLabel>
+    <skos:prefLabel xml:lang="hr">Minijatura</skos:prefLabel>
+    <skos:prefLabel xml:lang="it">Miniatura</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Miniature</skos:prefLabel>
+    <skos:prefLabel xml:lang="es">Iluminación</skos:prefLabel>
+    <skos:prefLabel xml:lang="et">Miniatuur</skos:prefLabel>
+    <skos:prefLabel xml:lang="cs">Iluminace</skos:prefLabel>
+    <skos:prefLabel xml:lang="eu">Miniatura</skos:prefLabel>
+    <skos:prefLabel xml:lang="sl">Iluminacija</skos:prefLabel>
+    <skos:prefLabel xml:lang="pl">Miniatura</skos:prefLabel>
+    <skos:prefLabel xml:lang="ro">Miniatură</skos:prefLabel>
+    <skos:prefLabel xml:lang="da">Miniatur</skos:prefLabel>
+    <skos:prefLabel xml:lang="nl">Manuscriptverluchting</skos:prefLabel>
+    <skos:prefLabel xml:lang="ca">Miniatura</skos:prefLabel>
+  </skos:Concept>
+  <ore:Aggregation rdf:about="/aggregation/provider/1339/item_25C5CTL6AUFVVGP5CQ5CPUBZ2SS56DAN">
+    <edm:aggregatedCHO rdf:resource="/1339/item_25C5CTL6AUFVVGP5CQ5CPUBZ2SS56DAN"/>
+    <edm:dataProvider>Ruprecht-Karls-Universit�t Heidelberg. Universit�tsbibliothek</edm:dataProvider>
+    <edm:isShownAt rdf:resource="https://heidicon.ub.uni-heidelberg.de/detail/573222"/>
+    <edm:isShownBy
+      rdf:resource="https://heidicon.ub.uni-heidelberg.de/api/v1/objects/uuid/b37cfa22-66e2-431f-b63b-165e6e6b271d/file/id/27505/file_version/name/huge/disposition/inline"/>
+    <edm:object
+      rdf:resource="https://heidicon.ub.uni-heidelberg.de/api/v1/objects/uuid/b37cfa22-66e2-431f-b63b-165e6e6b271d/file/id/27505/file_version/name/huge/disposition/inline"/>
+    <edm:provider rdf:resource="http://data.europeana.eu/organization/1548"></edm:provider>
+    <edm:rights rdf:resource="http://creativecommons.org/publicdomain/mark/1.0/"/>
+  </ore:Aggregation>
+  <ore:Proxy rdf:about="/proxy/europeana/1339/item_25C5CTL6AUFVVGP5CQ5CPUBZ2SS56DAN">
+    <dc:identifier>http://www.deutsche-digitale-bibliothek.de/item/25C5CTL6AUFVVGP5CQ5CPUBZ2SS56DAN</dc:identifier>
+    <dc:subject rdf:resource="http://data.europeana.eu/concept/2829"></dc:subject>
+    <dc:subject rdf:resource="http://data.europeana.eu/concept/2915"></dc:subject>
+    <dc:type rdf:resource="http://data.europeana.eu/concept/2915"></dc:type>
+    <edm:europeanaProxy>true</edm:europeanaProxy>
+    <ore:proxyFor rdf:resource="/1339/item_25C5CTL6AUFVVGP5CQ5CPUBZ2SS56DAN"/>
+    <ore:proxyIn rdf:resource="/aggregation/europeana/1339/item_25C5CTL6AUFVVGP5CQ5CPUBZ2SS56DAN"/>
+    <ore:lineage rdf:resource="/proxy/provider/1339/item_25C5CTL6AUFVVGP5CQ5CPUBZ2SS56DAN"/>
+  </ore:Proxy>
+  <ore:Proxy rdf:about="/proxy/provider/1339/item_25C5CTL6AUFVVGP5CQ5CPUBZ2SS56DAN">
+    <dc:date>nach 1490 (Herstellung)</dc:date>
+    <dc:description xml:lang="de">Dreiseitig von blauem Rahmen umgebenes Bildfeld, Hintergrund von Rankenwerk gef�llt: Der K�nig
+      sitzt nach links gewandt mit einem ausgestrecktem linken Bein, so dass die Fu�spitze �ber den Rahmen hinausweist, auf einem
+      schr�g ins Bild gestellten Thronstuhl, in der einen Hand h�lt er ein Szepter in der anderen den Reichsapfel, auf dem Kopf
+      eine B�gelkrone mit Kreuzabschluss. Eine Ranke mit gefiederten Bl�ttern, stilisierter Bl�te und Goldpunkten flankiert das
+      Bildfeld an zwei Seiten.
+    </dc:description>
+    <dc:description xml:lang="de">Kopien der Holzschnitte des Druckes Br�nn: Konrad Stahel / Matthias Preinlein, 1488
+      (*Hain15517),Vgl. auch SCHWANDNER 1746, Teil 4, CAPUT XXXI., S. 243.
+    </dc:description>
+    <dc:description xml:lang="de">Bibliotheca Palatina (Provenienz)</dc:description>
+    <dc:format xml:lang="de">Papier, kolorierte Federzeichnung (Material/Technik)</dc:format>
+    <dc:identifier>Cod. Pal. germ. 156, Bl. 134v (Inventarnummer)</dc:identifier>
+    <dc:relation xml:lang="de">Verweis: http://digi.ub.uni-heidelberg.de/diglit/cpg156/0284</dc:relation>
+    <dc:subject rdf:resource="https://d-nb.info/gnd/4127914-1"></dc:subject>
+    <dc:subject rdf:resource="https://d-nb.info/gnd/4225780-3"></dc:subject>
+    <dc:subject rdf:resource="https://d-nb.info/gnd/4008650-1"></dc:subject>
+    <dc:title xml:lang="de">Thronender ungarischer Herrscher: K�nig Ladislaus; von Rankenwerk umgeben.</dc:title>
+    <dc:type rdf:resource="https://d-nb.info/gnd/4008650-1"></dc:type>
+    <dcterms:alternative xml:lang="de">Chronica Hungarorum (Titelzusatz)</dcterms:alternative>
+    <dcterms:extent xml:lang="zxx">31,4 x 21,2 cm</dcterms:extent>
+    <dcterms:provenance xml:lang="de">Universit�tsbibliothek Heidelberg</dcterms:provenance>
+    <dcterms:spatial xml:lang="de">Bayern (Herstellung)</dcterms:spatial>
+    <edm:europeanaProxy>false</edm:europeanaProxy>
+    <ore:proxyFor rdf:resource="/1339/item_25C5CTL6AUFVVGP5CQ5CPUBZ2SS56DAN"/>
+    <ore:proxyIn rdf:resource="/aggregation/provider/1339/item_25C5CTL6AUFVVGP5CQ5CPUBZ2SS56DAN"/>
+    <edm:type>IMAGE</edm:type>
+  </ore:Proxy>
+  <edm:EuropeanaAggregation rdf:about="/aggregation/europeana/1339/item_25C5CTL6AUFVVGP5CQ5CPUBZ2SS56DAN">
+    <edm:aggregatedCHO rdf:resource="/1339/item_25C5CTL6AUFVVGP5CQ5CPUBZ2SS56DAN"/>
+    <edm:dataProvider xml:lang="en">Europeana Foundation</edm:dataProvider>
+    <edm:provider xml:lang="en">Europeana Foundation</edm:provider>
+    <edm:datasetName>1339_test_static_fields</edm:datasetName>
+    <edm:country>Poland</edm:country>
+    <edm:preview
+      rdf:resource="https://heidicon.ub.uni-heidelberg.de/api/v1/objects/uuid/b37cfa22-66e2-431f-b63b-165e6e6b271d/file/id/27505/file_version/name/huge/disposition/inline"/>
+    <edm:language>en</edm:language>
+    <edm:completeness>10</edm:completeness>
+  </edm:EuropeanaAggregation>
+  <foaf:Organization rdf:about="http://data.europeana.eu/organization/1548">
+    <skos:prefLabel xml:lang="de">Deutsche Digitale Bibliothek</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">German Digital Library</skos:prefLabel>
+  </foaf:Organization>
+</rdf:RDF>
