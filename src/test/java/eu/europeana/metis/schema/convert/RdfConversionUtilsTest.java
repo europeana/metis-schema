@@ -5,8 +5,11 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.Mockito.doThrow;
-import static org.mockito.Mockito.spy;
+import static org.mockito.ArgumentMatchers.anyBoolean;
+import static org.mockito.ArgumentMatchers.anyString;
+import static org.mockito.Mockito.doNothing;
+import static org.mockito.Mockito.doReturn;
+import static org.mockito.Mockito.when;
 
 import eu.europeana.metis.schema.jibx.AgentType;
 import eu.europeana.metis.schema.jibx.Alternative;
@@ -45,8 +48,13 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.OutputStream;
 import java.util.stream.Collectors;
+import org.jibx.runtime.IBindingFactory;
+import org.jibx.runtime.IMarshallingContext;
+import org.jibx.runtime.JiBXException;
 import org.junit.jupiter.api.Test;
+import org.mockito.Mockito;
 
 class RdfConversionUtilsTest {
 
@@ -116,22 +124,22 @@ class RdfConversionUtilsTest {
   void convertRdfToBytes_withValue() throws IOException, SerializationException {
     final RdfConversionUtils rdfConversionUtils = new RdfConversionUtils();
     RDF rdf = rdfConversionUtils.convertStringToRdf(readFileToString("rdf/record-rdf-media.xml"));
-    assertDoesNotThrow(() -> {byte[] result = rdfConversionUtils.convertRdfToBytes(rdf);
+    assertDoesNotThrow(() -> {
+      byte[] result = rdfConversionUtils.convertRdfToBytes(rdf);
       assertNotNull(result);
     });
   }
 
   @Test
-  void convertRdfToBytes_emptyRdf() throws IOException, SerializationException {
-    final RdfConversionUtils rdfConversionUtils = new RdfConversionUtils();
-    final RdfConversionUtils spyRdfConversionUtils = spy(rdfConversionUtils);
+  void convertRdfToBytes_emptyRdf() throws JiBXException {
+    IBindingFactory factory = Mockito.mock(IBindingFactory.class);
+    IMarshallingContext context = Mockito.mock(IMarshallingContext.class);
+    when(factory.getMappedClasses()).thenReturn(new String[0]);
+    doReturn(context).when(factory).createMarshallingContext();
+    doNothing().when(context).marshalDocument(any(Object.class), anyString(), anyBoolean(), any(OutputStream.class));
+    final RdfConversionUtils rdfConversionUtils = new RdfConversionUtils(factory);
 
-    doThrow(new SerializationException("Empty RDF"))
-        .when(spyRdfConversionUtils)
-        .convertRdfToBytes(any(RDF.class));
-
-    RDF rdf = rdfConversionUtils.convertStringToRdf(readFileToString("rdf/record-rdf-media-empty.xml"));
-    assertThrows(SerializationException.class, ()-> spyRdfConversionUtils.convertRdfToBytes(rdf));
+    assertThrows(SerializationException.class, () -> rdfConversionUtils.convertRdfToBytes(new RDF()));
   }
 
   static String readFileToString(String file) throws IOException {

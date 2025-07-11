@@ -41,11 +41,20 @@ public class RdfConversionUtils {
   }
 
   /**
+   * Instantiates a new Rdf conversion utils.
+   *
+   * @param iBindingFactory the binding factory
+   */
+  public RdfConversionUtils(IBindingFactory iBindingFactory) {
+    this.rdfBindingFactory = iBindingFactory;
+    this.rdfXmlElementMetadataMap = initializeRdfXmlElementMetadataMap();
+  }
+
+  /**
    * Constructor supplying class type for the binding factory.
    * <p>At the current state this is used for assisting testing</p>
    *
    * @param classType the class object type
-   * @param <T> the class type
    */
   <T> RdfConversionUtils(Class<T> classType) {
     try {
@@ -138,13 +147,36 @@ public class RdfConversionUtils {
     }
   }
 
+  /**
+   * The type Rdf xml element metadata.
+   */
   static class RdfXmlElementMetadata {
 
+    /**
+     * The Canonical class name.
+     */
     final String canonicalClassName;
+    /**
+     * The Prefix.
+     */
     final String prefix;
+    /**
+     * The Namespace.
+     */
     final String namespace;
+    /**
+     * The Name.
+     */
     final String name;
 
+    /**
+     * Instantiates a new Rdf xml element metadata.
+     *
+     * @param canonicalClassName the canonical class name
+     * @param prefix the prefix
+     * @param namespace the namespace
+     * @param name the name
+     */
     public RdfXmlElementMetadata(String canonicalClassName, String prefix, String namespace, String name) {
       this.canonicalClassName = canonicalClassName;
       this.prefix = prefix;
@@ -152,18 +184,38 @@ public class RdfConversionUtils {
       this.name = name;
     }
 
+    /**
+     * Gets canonical class name.
+     *
+     * @return the canonical class name
+     */
     public String getCanonicalClassName() {
       return canonicalClassName;
     }
 
+    /**
+     * Gets prefix.
+     *
+     * @return the prefix
+     */
     public String getPrefix() {
       return prefix;
     }
 
+    /**
+     * Gets namespace.
+     *
+     * @return the namespace
+     */
     public String getNamespace() {
       return namespace;
     }
 
+    /**
+     * Gets name.
+     *
+     * @return the name
+     */
     public String getName() {
       return name;
     }
