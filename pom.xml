@@ -5,7 +5,7 @@
 
   <artifactId>metis-schema</artifactId>
   <groupId>eu.europeana.metis</groupId>
-  <version>11-SNAPSHOT</version>
+  <version>11</version>
 
   <scm>
     <url>https://github.com/europeana/metis-schema</url>
