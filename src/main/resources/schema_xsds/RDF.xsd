@@ -13,18 +13,18 @@
 		</documentation>
 	</annotation>
 
-	<import namespace="http://www.w3.org/XML/1998/namespace"
-		schemaLocation="xml.xsd" />
-	<import namespace="http://www.europeana.eu/schemas/edm/" schemaLocation="EDM-COMMON-MAIN.xsd" />
+	<import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="xml.xsd" />
+	<import namespace="http://www.europeana.eu/schemas/edm/" schemaLocation="CONTEXTS.xsd" />
 
 	<element name="type" type="rdf:ResourceType">
-
 		<annotation>
 			<documentation>
 				To indicate the type of a resource. Currently not used
 			</documentation>
 		</annotation>
 	</element>
+	<element name="value" type="rdf:LiteralType" />
+
 	<complexType name="ResourceType">
 		<annotation>
 			<appinfo>
