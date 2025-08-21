@@ -838,17 +838,17 @@
             </documentation>
         </annotation>
     </element>
-    <element name="pointCount" type="rdf:NonNegativeIntegerType">
+    <element name="pointCount" type="rdf:NonNegativeIntegerWithoutDataTypeType">
       <annotation>
         <documentation>the number of points in the 3D model</documentation>
       </annotation>
     </element>
-    <element name="polygonCount" type="rdf:NonNegativeIntegerType">
+    <element name="polygonCount" type="rdf:NonNegativeIntegerWithoutDataTypeType">
       <annotation>
         <documentation>the number of polygons in the 3D model</documentation>
       </annotation>
     </element>
-    <element name="verticeCount" type="rdf:NonNegativeIntegerType">
+    <element name="verticeCount" type="rdf:NonNegativeIntegerWithoutDataTypeType">
       <annotation>
         <documentation>the number of vertices in the 3D model</documentation>
       </annotation>
@@ -866,38 +866,7 @@
         </annotation>
     </element>
 
-  <xs:element name="intendedUsage" type="rdf:ResourceType">
-    <xs:annotation>
-      <xs:documentation>
-        The rdf:resource must be one of the Europeana usageArea URIs.
-      </xs:documentation>
-      <xs:appinfo>
-        <sch:pattern id="intendedUsage-values">
-          <sch:let name="allowedUsageURIs" value="(
-          'http://data.europeana.eu/vocabulary/usageArea/Knowledge',
-          'http://data.europeana.eu/vocabulary/usageArea/Research',
-          'http://data.europeana.eu/vocabulary/usageArea/Education',
-          'http://data.europeana.eu/vocabulary/usageArea/Infotainment',
-          'http://data.europeana.eu/vocabulary/usageArea/Tourism',
-          'http://data.europeana.eu/vocabulary/usageArea/Gaming',
-          'http://data.europeana.eu/vocabulary/usageArea/Exhibition',
-          'http://data.europeana.eu/vocabulary/usageArea/Creativity',
-          'http://data.europeana.eu/vocabulary/usageArea/Design',
-          'http://data.europeana.eu/vocabulary/usageArea/Art',
-          'http://data.europeana.eu/vocabulary/usageArea/Curation',
-          'http://data.europeana.eu/vocabulary/usageArea/Maintenance',
-          'http://data.europeana.eu/vocabulary/usageArea/Restoration',
-          'http://data.europeana.eu/vocabulary/usageArea/Documentation')"/>
-
-          <sch:rule context="intendedUsage">
-            <sch:assert test="@rdf:resource = $allowedUsageURIs">
-              @rdf:resource must be one of the defined Europeana usageArea URIs.
-            </sch:assert>
-          </sch:rule>
-        </sch:pattern>
-      </xs:appinfo>
-    </xs:annotation>
-  </xs:element>
+  <element name="intendedUsage" type="rdf:ResourceType" />
 
     <attribute name="wasGeneratedBy">
         <annotation>

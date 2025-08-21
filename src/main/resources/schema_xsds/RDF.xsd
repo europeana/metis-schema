@@ -71,6 +71,11 @@
             </extension>
         </simpleContent>
     </complexType>
+  <complexType name="NonNegativeIntegerWithoutDataTypeType">
+    <simpleContent>
+      <extension base="nonNegativeInteger"/>
+    </simpleContent>
+  </complexType>
     <complexType name="DoubleType">
         <simpleContent>
             <extension base="double">

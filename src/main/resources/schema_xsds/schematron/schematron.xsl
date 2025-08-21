@@ -21,6 +21,7 @@
   xmlns:odrl="http://www.w3.org/ns/odrl/2/"
   xmlns:dct="http://purl.org/dc/terms/"
   xmlns:fn="http://www.w3.org/2005/xpath-functions"
+  xmlns:schema="https://schema.org/"
   xmlns:lib="http://localhost.com"
   version="1.0"><!--Implementers: please note that overriding process-prolog or process-root is
     the preferred method for meta-stylesheets to use where possible. -->
@@ -399,6 +400,20 @@
         <xsl:apply-templates/>
       </svrl:active-pattern>
       <xsl:apply-templates select="/" mode="M45"/>
+      <svrl:active-pattern>
+        <xsl:attribute name="document">
+          <xsl:value-of select="document-uri(/)"/>
+        </xsl:attribute>
+        <xsl:apply-templates/>
+      </svrl:active-pattern>
+      <xsl:apply-templates select="/" mode="M46"/>
+      <svrl:active-pattern>
+        <xsl:attribute name="document">
+          <xsl:value-of select="document-uri(/)"/>
+        </xsl:attribute>
+        <xsl:apply-templates/>
+      </svrl:active-pattern>
+      <xsl:apply-templates select="/" mode="M47"/>
     </svrl:schematron-output>
   </xsl:template>
 
@@ -1059,6 +1074,83 @@
   <xsl:template match="text()" priority="-1" mode="M45"/>
   <xsl:template match="@*|node()" priority="-2" mode="M45">
     <xsl:apply-templates select="*|comment()|processing-instruction()" mode="M45"/>
+  </xsl:template>
+
+  <!--PATTERN: digitalSourceType validation under edm:WebResource -->
+  <xsl:template match="edm:WebResource/schema:digitalSourceType" priority="1000" mode="M46">
+    <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+      context="edm:WebResource/schema:digitalSourceType"/>
+
+    <!--ASSERT -->
+    <xsl:choose>
+      <xsl:when test="@rdf:resource =
+                       ('https://cv.iptc.org/newscodes/digitalsourcetype/digitalCapture',
+                        'https://cv.iptc.org/newscodes/digitalsourcetype/dataDrivenMedia',
+                        'https://cv.iptc.org/newscodes/digitalsourcetype/digitalCreation')"/>
+      <xsl:otherwise>
+        <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+          test="@rdf:resource = (...)">
+          <xsl:attribute name="location">
+            <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+          </xsl:attribute>
+          <svrl:text>
+            Invalid edm:WebResource/schema:digitalSourceType: @rdf:resource must be one of
+            https://cv.iptc.org/newscodes/digitalsourcetype/digitalCapture,
+            https://cv.iptc.org/newscodes/digitalsourcetype/dataDrivenMedia,
+            https://cv.iptc.org/newscodes/digitalsourcetype/digitalCreation
+          </svrl:text>
+        </svrl:failed-assert>
+      </xsl:otherwise>
+    </xsl:choose>
+
+    <xsl:apply-templates select="*|comment()|processing-instruction()" mode="M46"/>
+  </xsl:template>
+  <xsl:template match="text()" priority="-1" mode="M46"/>
+  <xsl:template match="@*|node()" priority="-2" mode="M46">
+    <xsl:apply-templates select="*|comment()|processing-instruction()" mode="M46"/>
+  </xsl:template>
+
+  <!--PATTERN: intendedUsage validation under edm:WebResource -->
+  <xsl:template match="edm:WebResource/edm:intendedUsage" priority="1000" mode="M47">
+    <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+      context="edm:WebResource/edm:intendedUsage"/>
+
+    <!--ASSERT -->
+    <xsl:choose>
+      <xsl:when test="@rdf:resource =
+                       ('http://data.europeana.eu/vocabulary/usageArea/Knowledge',
+                        'http://data.europeana.eu/vocabulary/usageArea/Research',
+                        'http://data.europeana.eu/vocabulary/usageArea/Education',
+                        'http://data.europeana.eu/vocabulary/usageArea/Infotainment',
+                        'http://data.europeana.eu/vocabulary/usageArea/Tourism',
+                        'http://data.europeana.eu/vocabulary/usageArea/Gaming',
+                        'http://data.europeana.eu/vocabulary/usageArea/Exhibition',
+                        'http://data.europeana.eu/vocabulary/usageArea/Creativity',
+                        'http://data.europeana.eu/vocabulary/usageArea/Design',
+                        'http://data.europeana.eu/vocabulary/usageArea/Art',
+                        'http://data.europeana.eu/vocabulary/usageArea/Curation',
+                        'http://data.europeana.eu/vocabulary/usageArea/Maintenance',
+                        'http://data.europeana.eu/vocabulary/usageArea/Restoration',
+                        'http://data.europeana.eu/vocabulary/usageArea/Documentation')"/>
+      <xsl:otherwise>
+        <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+          test="@rdf:resource = (allowed set)">
+          <xsl:attribute name="location">
+            <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+          </xsl:attribute>
+          <svrl:text>
+            Invalid edm:WebResource/edm:intendedUsage: @rdf:resource must be one of the
+            defined Europeana usageArea URIs.
+          </svrl:text>
+        </svrl:failed-assert>
+      </xsl:otherwise>
+    </xsl:choose>
+
+    <xsl:apply-templates select="*|comment()|processing-instruction()" mode="M47"/>
+  </xsl:template>
+  <xsl:template match="text()" priority="-1" mode="M47"/>
+  <xsl:template match="@*|node()" priority="-2" mode="M47">
+    <xsl:apply-templates select="*|comment()|processing-instruction()" mode="M47"/>
   </xsl:template>
 
 </xsl:stylesheet>

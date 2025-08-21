@@ -1,28 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="https://schema.org/"
   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-  xmlns:sch="http://purl.oclc.org/dsdl/schematron"
   elementFormDefault="qualified">
 
   <import namespace="http://www.w3.org/1999/02/22-rdf-syntax-ns#" schemaLocation="RDF.xsd"/>
 
-  <element name="digitalSourceType" type="rdf:ResourceType">
-    <annotation>
-      <appinfo>
-        <sch:pattern id="digitalSourceType-values">
-          <sch:rule context="tns:digitalSourceType">
-            <sch:assert test="@rdf:resource =
-                                ('https://cv.iptc.org/newscodes/digitalsourcetype/digitalCapture',
-                                 'https://cv.iptc.org/newscodes/digitalsourcetype/dataDrivenMedia',
-                                 'https://cv.iptc.org/newscodes/digitalsourcetype/digitalCreation')">
-              @rdf:resource must be one of
-              iptc:digitalCapture
-              iptc:dataDrivenMedia
-              iptc:digitalCreation
-            </sch:assert>
-          </sch:rule>
-        </sch:pattern>
-      </appinfo>
-    </annotation>
-  </element>
+  <element name="digitalSourceType" type="rdf:ResourceType" />
 </schema>
