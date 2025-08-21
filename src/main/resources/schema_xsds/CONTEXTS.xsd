@@ -3,7 +3,8 @@
   targetNamespace="http://www.europeana.eu/schemas/edm/" 
   xmlns:edm="http://www.europeana.eu/schemas/edm/" 
   xmlns:dc="http://purl.org/dc/elements/1.1/"
-  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
   xmlns:dcterms="http://purl.org/dc/terms/" 
   xmlns:wgs84_pos="http://www.w3.org/2003/01/geo/wgs84_pos#" 
   xmlns:skos="http://www.w3.org/2004/02/skos/core#"
@@ -12,6 +13,7 @@
   xmlns:foaf="http://xmlns.com/foaf/0.1/"
   xmlns:ebucore="http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#"
   xmlns:svcs="http://rdfs.org/sioc/services#"
+  xmlns:schema="https://schema.org/"
   xmlns:sch="http://purl.oclc.org/dsdl/schematron"
   elementFormDefault="qualified">
 
@@ -31,6 +33,8 @@
   <import namespace="http://www.w3.org/2003/01/geo/wgs84_pos#" schemaLocation="WGS84.xsd" />
   <import namespace="http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#" schemaLocation="EBUCORE.xsd" />
   <import namespace="http://rdfs.org/sioc/services#" schemaLocation="SVCS.xsd"/>
+  <import namespace="https://schema.org/" schemaLocation="SCHEMA.xsd"/>
+  <import namespace="http://www.w3.org/2000/01/rdf-schema#" schemaLocation="RDFS.xsd"/>
 
   <include schemaLocation="EDM-COMMON-MAIN.xsd"/>
   
@@ -146,6 +150,8 @@
           <element ref="dc:rights" maxOccurs="unbounded" minOccurs="0"/>
           <element ref="dc:source" maxOccurs="unbounded" minOccurs="0"/>
           <element ref="dc:type" maxOccurs="unbounded" minOccurs="0"/>
+          <element ref="dc:title" maxOccurs="unbounded" minOccurs="0"/>
+          <element ref="dc:language" maxOccurs="unbounded" minOccurs="0"/>
           <element ref="dcterms:conformsTo" maxOccurs="unbounded" minOccurs="0"/>
           <element ref="dcterms:created" maxOccurs="unbounded" minOccurs="0"/>
           <element ref="dcterms:extent" maxOccurs="unbounded" minOccurs="0"/>
@@ -153,6 +159,7 @@
           <element ref="dcterms:isFormatOf" maxOccurs="unbounded" minOccurs="0"/>
           <element ref="dcterms:isPartOf" maxOccurs="unbounded" minOccurs="0"/>
           <element ref="dcterms:issued" maxOccurs="unbounded" minOccurs="0"/>
+          <element ref="dcterms:temporal" maxOccurs="unbounded" minOccurs="0"/>
           <element ref="edm:isNextInSequence" maxOccurs="1" minOccurs="0"/>
           <element ref="edm:rights" maxOccurs="1" minOccurs="0"/>
           <element ref="owl:sameAs" maxOccurs="unbounded" minOccurs="0"/>
@@ -170,12 +177,18 @@
           <element ref="ebucore:frameRate" maxOccurs="1" minOccurs="0"/>
           <element ref="edm:hasColorSpace" maxOccurs="1" minOccurs="0"/>
           <element ref="edm:componentColor" maxOccurs="6" minOccurs="0"/>
+          <element ref="edm:pointCount" maxOccurs="1" minOccurs="0"/>
+          <element ref="edm:polygonCount" maxOccurs="1" minOccurs="0"/>
+          <element ref="edm:verticeCount" maxOccurs="1" minOccurs="0"/>
+          <element ref="rdfs:seeAlso" maxOccurs="1" minOccurs="0"/>
           <element ref="ebucore:orientation" maxOccurs="1" minOccurs="0"/>
           <element ref="ebucore:audioChannelNumber" maxOccurs="1" minOccurs="0"/>
           <element ref="dcterms:isReferencedBy" maxOccurs="unbounded" minOccurs="0"/>
           <element ref="edm:preview" maxOccurs="1" minOccurs="0"/>
           <element ref="svcs:has_service" maxOccurs="unbounded" minOccurs="0"/>
           <element ref="edm:type" maxOccurs="1" minOccurs="0" />
+          <element ref="schema:digitalSourceType" maxOccurs="1" minOccurs="0" />
+          <element ref="edm:intendedUsage" maxOccurs="unbounded" minOccurs="0"/>
         </sequence>
       </extension>
     </complexContent>
