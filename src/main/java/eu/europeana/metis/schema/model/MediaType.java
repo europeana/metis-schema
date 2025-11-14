@@ -67,6 +67,11 @@ public enum MediaType {
     final MediaType result;
     if (mimeType == null) {
       result = OTHER;
+    } else if (mimeType.startsWith("model/")
+        || mimeType.startsWith("application/vnd.las")
+        || mimeType.startsWith("application/vnd.laszip")
+        || mimeType.startsWith("image/vnd.dxf")) {
+      result = THREE_D;
     } else if (mimeType.startsWith("image/")) {
       result = IMAGE;
     } else if (mimeType.startsWith("audio/")) {
@@ -75,8 +80,6 @@ public enum MediaType {
       result = VIDEO;
     } else if (mimeType.startsWith("text/") || isApplicationMediaRepresentingText(mimeType)) {
       result = TEXT;
-    } else if (mimeType.startsWith("model/")){
-      result = THREE_D;
     } else {
       result = OTHER;
     }
@@ -84,10 +87,9 @@ public enum MediaType {
   }
 
   /**
-   * Determines whether the supplied media base type matches the candidate media type. This method
-   * takes possible subtypes into account: if the candidate has a subtype, the media type is
-   * required to have it too, but if the candidate does not have a subtype, the media type is
-   * accepted either with or without subtype.
+   * Determines whether the supplied media base type matches the candidate media type. This method takes possible subtypes into
+   * account: if the candidate has a subtype, the media type is required to have it too, but if the candidate does not have a
+   * subtype, the media type is accepted either with or without subtype.
    *
    * @param candidateType The candidate type. Does not have parameters.
    * @param mediaType The base type. Does not have parameters.
@@ -100,8 +102,8 @@ public enum MediaType {
   }
 
   /**
-   * Determines whether the supplied media type is a text media type starting with 'application/'.
-   * This method takes subtypes and parameters into consideration.
+   * Determines whether the supplied media type is a text media type starting with 'application/'. This method takes subtypes and
+   * parameters into consideration.
    *
    * @param mediaType The media type to categorize.
    * @return Whether the media type is a text media type starting with 'application/'.
@@ -113,6 +115,6 @@ public enum MediaType {
 
     // Match against all possible application types that are accepted as test types.
     return Arrays.stream(SUPPORTED_APPLICATION_TYPES_AS_TEXT)
-        .anyMatch(candidate -> mediaTypeMatchesCandidate(candidate, baseType));
+                 .anyMatch(candidate -> mediaTypeMatchesCandidate(candidate, baseType));
   }
 }
