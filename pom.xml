@@ -5,7 +5,7 @@
 
   <artifactId>metis-schema</artifactId>
   <groupId>eu.europeana.metis</groupId>
-  <version>11</version>
+  <version>12</version>
 
   <scm>
     <url>https://github.com/europeana/metis-schema</url>
@@ -23,6 +23,7 @@
     <binding.replace><![CDATA[ $1
     <namespace uri="http://www.w3.org/XML/1998/namespace" prefix="xml" />
     <namespace uri="http://www.w3.org/1999/02/22-rdf-syntax-ns#" prefix="rdf" />
+    <namespace uri="http://www.w3.org/2000/01/rdf-schema#" prefix="rdfs" />
     <namespace uri="http://purl.org/dc/elements/1.1/" prefix="dc" />
     <namespace uri="http://purl.org/dc/terms/" prefix="dcterms" />
     <namespace uri="http://www.europeana.eu/schemas/edm/" prefix="edm" />
@@ -39,6 +40,7 @@
     <namespace uri="http://rdfs.org/sioc/services#" prefix="svcs" />
     <namespace uri="http://www.w3.org/ns/oa#" prefix="oa" />
     <namespace uri="http://www.w3.org/ns/dqv#" prefix="dqv" />
+    <namespace uri="https://schema.org/" prefix="schema" />
             ]]>
     </binding.replace>
     <token.regex><![CDATA[ (<binding.*>) ]]></token.regex>
@@ -119,7 +121,7 @@
     <repository>
       <id>libs-release</id>
       <name>libs-release</name>
-      <url>https://artifactory.eanadev.org/artifactory/libs-release</url>
+      <url>https://artifactory-prod.eanadev.org/artifactory/libs-release</url>
       <releases>
         <enabled>true</enabled>
       </releases>
@@ -131,7 +133,7 @@
     <repository>
       <id>libs-snapshot</id>
       <name>libs-snapshot</name>
-      <url>https://artifactory.eanadev.org/artifactory/libs-snapshot</url>
+      <url>https://artifactory-prod.eanadev.org/artifactory/libs-snapshot</url>
       <releases>
         <enabled>false</enabled>
       </releases>
@@ -145,12 +147,12 @@
     <repository>
       <id>artifactory.eanadev.org</id>
       <name>artifactory.eanadev.org-releases</name>
-      <url>https://artifactory.eanadev.org/artifactory/libs-release-local</url>
+      <url>https://artifactory-prod.eanadev.org/artifactory/libs-release-local</url>
     </repository>
     <snapshotRepository>
       <id>artifactory.eanadev.org</id>
       <name>artifactory.eanadev.org-snapshots</name>
-      <url>https://artifactory.eanadev.org/artifactory/libs-snapshot-local</url>
+      <url>https://artifactory-prod.eanadev.org/artifactory/libs-snapshot-local</url>
     </snapshotRepository>
   </distributionManagement>
 

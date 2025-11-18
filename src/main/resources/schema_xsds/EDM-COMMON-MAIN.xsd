@@ -14,7 +14,8 @@
     xmlns:rdaGr2="http://rdvocab.info/ElementsGr2/"
     xmlns:foaf="http://xmlns.com/foaf/0.1/"
     xmlns:wgs84_pos="http://www.w3.org/2003/01/geo/wgs84_pos#"
-  xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:sch="http://purl.oclc.org/dsdl/schematron"
     elementFormDefault="qualified">
 
     <import namespace="http://purl.org/dc/elements/1.1/" schemaLocation="DC.xsd"/>
@@ -836,10 +837,23 @@
                 &lt;spatialResolution&gt;FF0000&lt;/spatialResolution&gt;
             </documentation>
         </annotation>
-
+    </element>
+    <element name="pointCount" type="rdf:NonNegativeIntegerWithoutDataTypeType">
+      <annotation>
+        <documentation>the number of points in the 3D model</documentation>
+      </annotation>
+    </element>
+    <element name="polygonCount" type="rdf:NonNegativeIntegerWithoutDataTypeType">
+      <annotation>
+        <documentation>the number of polygons in the 3D model</documentation>
+      </annotation>
+    </element>
+    <element name="verticeCount" type="rdf:NonNegativeIntegerWithoutDataTypeType">
+      <annotation>
+        <documentation>the number of vertices in the 3D model</documentation>
+      </annotation>
     </element>
     <element name="intermediateProvider" type="rdf:ResourceOrLiteralType">
-
         <annotation>
             <documentation>The name or identifier of the intermediate organization that selects, collates, or curates data
                 from a Data Provider that is then aggregated by a Provider from which Europeana harvests.
@@ -850,8 +864,9 @@
                 &lt;edm:intermediateProvider rdf:resource=”www.erfgoedplus.be/”/&lt;
             </documentation>
         </annotation>
-
     </element>
+
+  <element name="intendedUsage" type="rdf:ResourceType" />
 
     <attribute name="wasGeneratedBy">
         <annotation>
