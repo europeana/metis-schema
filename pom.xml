@@ -145,13 +145,13 @@
 
   <distributionManagement>
     <repository>
-      <id>artifactory.eanadev.org</id>
-      <name>artifactory.eanadev.org-releases</name>
+      <id>artifactory-prod.eanadev.org</id>
+      <name>artifactory-prod.eanadev.org-releases</name>
       <url>https://artifactory-prod.eanadev.org/artifactory/libs-release-local</url>
     </repository>
     <snapshotRepository>
-      <id>artifactory.eanadev.org</id>
-      <name>artifactory.eanadev.org-snapshots</name>
+      <id>artifactory-prod.eanadev.org</id>
+      <name>artifactory-prod.eanadev.org-snapshots</name>
       <url>https://artifactory-prod.eanadev.org/artifactory/libs-snapshot-local</url>
     </snapshotRepository>
   </distributionManagement>
