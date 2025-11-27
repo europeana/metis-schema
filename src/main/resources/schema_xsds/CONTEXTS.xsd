@@ -179,7 +179,7 @@
           <element ref="edm:componentColor" maxOccurs="6" minOccurs="0"/>
           <element ref="edm:pointCount" maxOccurs="1" minOccurs="0"/>
           <element ref="edm:polygonCount" maxOccurs="1" minOccurs="0"/>
-          <element ref="edm:verticeCount" maxOccurs="1" minOccurs="0"/>
+          <element ref="edm:vertexCount" maxOccurs="1" minOccurs="0"/>
           <element ref="rdfs:seeAlso" maxOccurs="unbounded" minOccurs="0"/>
           <element ref="ebucore:orientation" maxOccurs="1" minOccurs="0"/>
           <element ref="ebucore:audioChannelNumber" maxOccurs="1" minOccurs="0"/>
