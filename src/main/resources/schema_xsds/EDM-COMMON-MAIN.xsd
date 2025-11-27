@@ -848,7 +848,7 @@
         <documentation>the number of polygons in the 3D model</documentation>
       </annotation>
     </element>
-    <element name="verticeCount" type="rdf:NonNegativeIntegerWithoutDataTypeType">
+    <element name="vertexCount" type="rdf:NonNegativeIntegerWithoutDataTypeType">
       <annotation>
         <documentation>the number of vertices in the 3D model</documentation>
       </annotation>
