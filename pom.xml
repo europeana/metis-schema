@@ -58,7 +58,7 @@
     <!--No internal versions-->
 
     <!--External-->
-    <version.spring.boot>4.0.0</version.spring.boot>
+    <version.spring.boot>4.0.1</version.spring.boot>
     <jibx.version>1.4.2</jibx.version>
     <bcel.version>6.8.1</bcel.version>
     <replacer.version>1.5.2</replacer.version>
