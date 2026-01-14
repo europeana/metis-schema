@@ -62,7 +62,6 @@
     <jibx.version>1.4.2</jibx.version>
     <bcel.version>6.8.1</bcel.version>
     <replacer.version>1.5.2</replacer.version>
-    <version.jackson-annotations>2.20</version.jackson-annotations>
   </properties>
 
   <dependencyManagement>
@@ -79,9 +78,8 @@
 
   <dependencies>
     <dependency>
-      <groupId>com.fasterxml.jackson.core</groupId>
-      <artifactId>jackson-annotations</artifactId>
-      <version>${version.jackson-annotations}</version>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-jackson</artifactId>
     </dependency>
     <!-- JIBX dependencies -->
     <dependency>
