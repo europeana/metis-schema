@@ -115,6 +115,7 @@
         <sequence>
           <element ref="skos:prefLabel" maxOccurs="unbounded" minOccurs="0" />
           <element ref="skos:altLabel" maxOccurs="unbounded" minOccurs="0" />
+          <element ref="skos:hiddenLabel" maxOccurs="unbounded" minOccurs="0"/>
           <element ref="skos:note" maxOccurs="unbounded" minOccurs="0" />
           <element ref="dcterms:hasPart" maxOccurs="unbounded" minOccurs="0"/>
           <element ref="dcterms:isPartOf" maxOccurs="unbounded" minOccurs="0" />
@@ -122,7 +123,6 @@
           <element ref="edm:end" maxOccurs="1" minOccurs="0" />
           <element ref="edm:isNextInSequence" maxOccurs="1" minOccurs="0"/>
           <element ref="owl:sameAs" maxOccurs="unbounded" minOccurs="0"/>
-          <element ref="skos:hiddenLabel" maxOccurs="unbounded" minOccurs="0"/>
           <element ref="skos:notation" maxOccurs="1" minOccurs="0"/>
         </sequence>
       </extension>
