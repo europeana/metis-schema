@@ -47,6 +47,7 @@
 <!--            <element ref="edm:europeanaRole" minOccurs="1" maxOccurs="unbounded"/>-->
             <element ref="foaf:homepage" minOccurs="0" maxOccurs="1"/>
             <element ref="foaf:logo" minOccurs="0" maxOccurs="1"/>
+            <element ref="skos:hiddenLabel" minOccurs="0" maxOccurs="unbounded"/>
           </sequence>
         </extension>
       </complexContent>
