@@ -80,6 +80,12 @@
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-jackson</artifactId>
+      <exclusions>
+        <exclusion>
+          <groupId>org.springframework.boot</groupId>
+          <artifactId>spring-boot-starter-logging</artifactId>
+        </exclusion>
+      </exclusions>
     </dependency>
     <!-- JIBX dependencies -->
     <dependency>
@@ -92,23 +98,6 @@
           <groupId>bcel</groupId>
         </exclusion>
       </exclusions>
-    </dependency>
-    <dependency>
-      <groupId>org.jibx</groupId>
-      <artifactId>jibx-extras</artifactId>
-      <version>${jibx.version}</version>
-      <exclusions>
-        <exclusion>
-          <artifactId>bcel</artifactId>
-          <groupId>bcel</groupId>
-        </exclusion>
-      </exclusions>
-    </dependency>
-
-    <dependency>
-      <groupId>org.apache.bcel</groupId>
-      <artifactId>bcel</artifactId>
-      <version>${bcel.version}</version>
     </dependency>
 
     <!--Test dependencies-->
