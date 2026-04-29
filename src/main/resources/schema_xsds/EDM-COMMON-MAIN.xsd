@@ -853,6 +853,11 @@
         <documentation>the number of vertices in the 3D model</documentation>
       </annotation>
     </element>
+  <element name="gaussianCount" type="rdf:NonNegativeIntegerWithoutDataTypeType">
+    <annotation>
+      <documentation>the number of gaussians in the 3D model</documentation>
+    </annotation>
+  </element>
     <element name="intermediateProvider" type="rdf:ResourceOrLiteralType">
         <annotation>
             <documentation>The name or identifier of the intermediate organization that selects, collates, or curates data

@@ -24,6 +24,7 @@
             <choice>
               <element ref="skos:prefLabel"/>
               <element ref="skos:altLabel"/>
+              <element ref="skos:hiddenLabel"/>
               <element ref="skos:broader"/>
               <element ref="skos:narrower"/>
               <element ref="skos:related"/>
