@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://rdfs.org/sioc/services#"
         xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+        xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
         xmlns:svcs="http://rdfs.org/sioc/services#"
         xmlns:dcterms="http://purl.org/dc/terms/"
         xmlns:doap="http://usefulinc.com/ns/doap#" elementFormDefault="qualified">
     <import namespace="http://www.w3.org/1999/02/22-rdf-syntax-ns#" schemaLocation="RDF.xsd"/>
+    <import namespace="http://www.w3.org/2000/01/rdf-schema#" schemaLocation="RDFS.xsd"/>
     <import namespace="http://purl.org/dc/terms/" schemaLocation="DCTERMS.xsd"/>
     <import namespace="http://usefulinc.com/ns/doap#" schemaLocation="DOAP.xsd"/>
 
@@ -23,6 +25,7 @@
                     <sequence minOccurs="1" maxOccurs="1">
                         <element ref="dcterms:conformsTo" minOccurs="1" maxOccurs="unbounded"/>
                         <element ref="doap:implements" minOccurs="0" maxOccurs="unbounded"/>
+                        <element ref="rdfs:label" minOccurs="0" maxOccurs="unbounded"/>
                     </sequence>
                 </extension>
             </complexContent>

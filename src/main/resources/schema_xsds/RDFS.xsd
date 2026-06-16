@@ -5,6 +5,6 @@
 
   <import namespace="http://www.w3.org/1999/02/22-rdf-syntax-ns#" schemaLocation="RDF.xsd"/>
 
-  <element name="seeAlso" type="rdf:ResourceType">
-  </element>
+  <element name="seeAlso" type="rdf:ResourceType"/>
+  <element name="label" type="rdf:LiteralType"/>
 </schema>
