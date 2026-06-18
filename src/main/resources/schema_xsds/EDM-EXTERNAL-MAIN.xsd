@@ -43,6 +43,7 @@
         <sch:ns prefix="rdfs" uri="http://www.w3.org/2000/01/rdf-schema#"/>
         <sch:ns prefix="skos" uri="http://www.w3.org/2004/02/skos/core#"/>
         <sch:ns prefix="svcs" uri="http://rdfs.org/sioc/services#"/>
+        <sch:ns prefix="prov" uri="http://www.w3.org/ns/prov#"/>
 
         <xsl:variable name="license_patterns">
           <!--
