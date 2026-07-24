@@ -87,7 +87,7 @@ public class RdfConversionUtils {
     final RdfXmlElementMetadata rdfXmlElementMetadata = rdfXmlElementMetadataMap.get(objectClass.getCanonicalName());
     Objects.requireNonNull(rdfXmlElementMetadata,
         String.format("Element metadata not found for class: %s", objectClass.getCanonicalName()));
-    return String.format("%s:%s", rdfXmlElementMetadata.getPrefix(), rdfXmlElementMetadata.getName());
+    return String.format("%s:%s", rdfXmlElementMetadata.prefix(), rdfXmlElementMetadata.name());
   }
 
   /**
@@ -122,35 +122,8 @@ public class RdfConversionUtils {
     }
   }
 
-  static class RdfXmlElementMetadata {
+  record RdfXmlElementMetadata(String canonicalClassName, String prefix, String namespace, String name) {
 
-    final String canonicalClassName;
-    final String prefix;
-    final String namespace;
-    final String name;
-
-    public RdfXmlElementMetadata(String canonicalClassName, String prefix, String namespace, String name) {
-      this.canonicalClassName = canonicalClassName;
-      this.prefix = prefix;
-      this.namespace = namespace;
-      this.name = name;
-    }
-
-    public String getCanonicalClassName() {
-      return canonicalClassName;
-    }
-
-    public String getPrefix() {
-      return prefix;
-    }
-
-    public String getNamespace() {
-      return namespace;
-    }
-
-    public String getName() {
-      return name;
-    }
   }
 
   /**
@@ -209,7 +182,7 @@ public class RdfConversionUtils {
       final String prefix = rdfBindingFactory.getPrefixes()[namespaceIndex];
       final RdfXmlElementMetadata rdfXmlElementMetadata = new RdfXmlElementMetadata(canonicalName, prefix, elementNamespace,
           elementName);
-      rdfXmlElementMetadataMap.put(rdfXmlElementMetadata.getCanonicalClassName(), rdfXmlElementMetadata);
+      rdfXmlElementMetadataMap.put(rdfXmlElementMetadata.canonicalClassName(), rdfXmlElementMetadata);
     }
   }
 }
