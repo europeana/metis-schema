@@ -1,10 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.openarchives.org/ore/terms/"
-	xmlns:ore="http://www.openarchives.org/ore/terms/" xmlns:edm="http://www.europeana.eu/schemas/edm/"
-	xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-	xmlns:dcterms="http://purl.org/dc/terms/" xmlns:enrichment="http://www.europeana.eu/schemas/edm/enrichment/"
-		xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+	xmlns:ore="http://www.openarchives.org/ore/terms/"
+  xmlns:edm="http://www.europeana.eu/schemas/edm/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:dcterms="http://purl.org/dc/terms/"
+  xmlns:enrichment="http://www.europeana.eu/schemas/edm/enrichment/"
+	xmlns:owl="http://www.w3.org/2002/07/owl#"
+  xmlns:sch="http://purl.oclc.org/dsdl/schematron"
   xmlns:dqv="http://www.w3.org/ns/dqv#"
+  xmlns:prov="http://www.w3.org/ns/prov#"
 	elementFormDefault="qualified">
 
 	<annotation>
@@ -12,20 +17,15 @@
 		</documentation>
 	</annotation>
 
-	<import namespace="http://purl.org/dc/elements/1.1/"
-		schemaLocation="DC.xsd" />
-	<import namespace="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-		schemaLocation="RDF.xsd" />
-	<import namespace="http://www.europeana.eu/schemas/edm/"
-		schemaLocation="EDM-COMMON-MAIN.xsd" />
-	<import namespace="http://www.europeana.eu/schemas/edm/enrichment/"
-		schemaLocation="ENRICHMENT.xsd" />
-	<import namespace="http://www.w3.org/2002/07/owl#"
-		schemaLocation="OWL.xsd" />
-  <import namespace="http://www.w3.org/ns/dqv#"
-    schemaLocation="DQV.xsd" />
-  <import namespace="http://purl.org/dc/terms/"
-    schemaLocation="DCTERMS.xsd" />
+	<import namespace="http://purl.org/dc/elements/1.1/" schemaLocation="DC.xsd" />
+	<import namespace="http://www.w3.org/1999/02/22-rdf-syntax-ns#" schemaLocation="RDF.xsd" />
+	<import namespace="http://www.europeana.eu/schemas/edm/" schemaLocation="EDM-COMMON-MAIN.xsd" />
+	<import namespace="http://www.europeana.eu/schemas/edm/enrichment/" schemaLocation="ENRICHMENT.xsd" />
+	<import namespace="http://www.w3.org/2002/07/owl#" schemaLocation="OWL.xsd" />
+  <import namespace="http://www.w3.org/ns/dqv#" schemaLocation="DQV.xsd" />
+  <import namespace="http://purl.org/dc/terms/" schemaLocation="DCTERMS.xsd" />
+  <import namespace="http://www.w3.org/ns/prov#" schemaLocation="PROV.xsd"/>
+
 	<element name="Aggregation">
 		<complexType>
 			<annotation>
@@ -98,8 +98,7 @@
 					<sequence>
 						<element ref="edm:aggregatedCHO" maxOccurs="1" minOccurs="1" />
 						<element ref="edm:dataProvider" maxOccurs="1" minOccurs="0" />
-						<element ref="edm:hasView" maxOccurs="unbounded"
-							minOccurs="0" />
+						<element ref="edm:hasView" maxOccurs="unbounded" minOccurs="0" />
 						<element ref="edm:isShownAt" maxOccurs="1" minOccurs="0" />
 						<element ref="edm:isShownBy" maxOccurs="1" minOccurs="0" />
 						<element ref="edm:object" maxOccurs="1" minOccurs="0" />
@@ -111,6 +110,7 @@
 						<element ref="dqv:hasQualityAnnotation" maxOccurs="unbounded" minOccurs="0"/>
 						<element ref="dcterms:created" minOccurs="0" maxOccurs="1"/>
 						<element ref="dcterms:modified" minOccurs="0" maxOccurs="1"/>
+            <element ref="prov:wasGeneratedBy" minOccurs="0" maxOccurs="1"/>
 					</sequence>
 				</extension>
 			</complexContent>

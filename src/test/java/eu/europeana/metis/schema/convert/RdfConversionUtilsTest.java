@@ -35,6 +35,7 @@ import eu.europeana.metis.schema.jibx.TimeSpanType;
 import eu.europeana.metis.schema.jibx.Title;
 import eu.europeana.metis.schema.jibx.Title1;
 import eu.europeana.metis.schema.jibx.Type;
+import eu.europeana.metis.schema.jibx.WasGeneratedBy;
 import org.junit.jupiter.api.Test;
 
 class RdfConversionUtilsTest {
@@ -47,7 +48,6 @@ class RdfConversionUtilsTest {
 
   @Test
   void getQualifiedElementNameForClass_ContextualClasses() {
-    //Check contextual classes
     final RdfConversionUtils rdfConversionUtils = new RdfConversionUtils();
     assertEquals("edm:AgentType", rdfConversionUtils.getQualifiedElementNameForClass(AgentType.class));
     assertEquals("edm:TimeSpanType", rdfConversionUtils.getQualifiedElementNameForClass(TimeSpanType.class));
@@ -57,7 +57,6 @@ class RdfConversionUtilsTest {
 
   @Test
   void getQualifiedElementNameForClass_Dc() {
-    //Check dc elements
     final RdfConversionUtils rdfConversionUtils = new RdfConversionUtils();
     assertEquals("dc:coverage", rdfConversionUtils.getQualifiedElementNameForClass(Coverage.class));
     assertEquals("dc:description", rdfConversionUtils.getQualifiedElementNameForClass(Description.class));
@@ -72,7 +71,6 @@ class RdfConversionUtilsTest {
 
   @Test
   void getQualifiedElementNameForClass_Dcterms() {
-    //Check dcterms elements
     final RdfConversionUtils rdfConversionUtils = new RdfConversionUtils();
     assertEquals("dcterms:alternative", rdfConversionUtils.getQualifiedElementNameForClass(Alternative.class));
     assertEquals("dcterms:hasPart", rdfConversionUtils.getQualifiedElementNameForClass(HasPart.class));
@@ -90,7 +88,6 @@ class RdfConversionUtilsTest {
 
   @Test
   void getQualifiedElementNameForClass_Edm() {
-    //Check edm elements
     final RdfConversionUtils rdfConversionUtils = new RdfConversionUtils();
     assertEquals("edm:currentLocation", rdfConversionUtils.getQualifiedElementNameForClass(CurrentLocation.class));
     assertEquals("edm:hasType", rdfConversionUtils.getQualifiedElementNameForClass(HasType.class));
@@ -99,5 +96,11 @@ class RdfConversionUtilsTest {
     assertEquals("edm:hasURL", rdfConversionUtils.getQualifiedElementNameForClass(HasURL.class));
     assertEquals("edm:equivalentPID", rdfConversionUtils.getQualifiedElementNameForClass(EquivalentPID.class));
     assertEquals("edm:replacesPID", rdfConversionUtils.getQualifiedElementNameForClass(ReplacesPID.class));
+  }
+
+  @Test
+  void getQualifiedElementNameForClass_prov() {
+    final RdfConversionUtils rdfConversionUtils = new RdfConversionUtils();
+    assertEquals("prov:wasGeneratedBy", rdfConversionUtils.getQualifiedElementNameForClass(WasGeneratedBy.class));
   }
 }
